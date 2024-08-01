@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "@/styles/common.scss";
+import "@/styles/media-style.scss";
+import "bootstrap/dist/css/bootstrap.css";
+import "@/styles/section.scss";
+import "@/assets/fonts/fontawesome-free-5.15.4-web/css/all.min.css";
+import "@/assets/fonts/ionicons-2.0.1/css/ionicons.min.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
