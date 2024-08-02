@@ -15,7 +15,7 @@ function Header(params: any) {
           <div className="the-header-content element-to-stick">
             <div className="left-header-container">
               <div className="header-logo">
-                <Link href="/blogs">
+                <Link href="/">
                   <img
                     src="http://tmp-test.sofishgame.com/public/images/logo.png"
                     alt="IMG"
@@ -35,16 +35,16 @@ function Header(params: any) {
                 <nav className="main-navigation">
                   <ul className="menu-lists">
                     <li className="menu-item-has-children">
-                      <a href="./index.html"> Home </a>
+                      <Link href="/"> Home </Link>
                     </li>
                     <li className="menu-item-has-children">
-                      <a href="./games.html"> Games </a>
+                      <Link href="/games"> Games </Link>
                     </li>
                     <li className="menu-item-has-children">
-                      <a href="./blogs.html"> Blogs </a>
+                      <Link href="/blogs"> Blogs </Link>
                     </li>
                     <li className="menu-item-has-children">
-                      <a href="./topup.html"> TopUp </a>
+                      <Link href="/topup"> TopUp </Link>
                     </li>
                     <li className="menu-item-has-children">
                       <Link href="/user-center"> UserCenter </Link>
@@ -52,20 +52,19 @@ function Header(params: any) {
                   </ul>
                 </nav>
                 <div className="container-header-logo">
-                  <a href="./index.html">
+                  <Link href="/">
                     <img
                       src="http://tmp-test.sofishgame.com/public/images/logo.png"
                       alt="IMG"
                     />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
             <div className="right-header-container">
               <div className="header-menu-right">
                 <div className="login-links">
-                  <a
-                    href="#top"
+                  <strong
                     className="login"
                     data-display=".box-login"
                     data-toggle="modal"
@@ -80,7 +79,7 @@ function Header(params: any) {
                       <i className="far fa-user"></i>
                       <span className="header-menu-login-span">Login</span>
                     </button>
-                  </a>
+                  </strong>
                 </div>
                 {/* <!-- <div className="account-links">
                         <a href="./user-center.html" className="account-name">xwosjo,欢迎你</a>
@@ -120,19 +119,19 @@ function Header(params: any) {
         <div className="inner-menu">
           <ul className="nav navbar-nav">
             <li>
-              <a href="./index.html"> Home </a>
+              <Link href="/"> Home </Link>
             </li>
             <li>
-              <a href="./games.html"> Games </a>
+              <Link href="/games"> Games </Link>
             </li>
             <li>
-              <a href="./blogs.html"> Blogs </a>
+              <Link href="/blogs"> Blogs </Link>
             </li>
             <li>
-              <a href="./topup.html"> TouUp </a>
+              <Link href="/topup"> TouUp </Link>
             </li>
             <li>
-              <a href="./user-center.html"> UserCenter </a>
+              <Link href="/user-center"> UserCenter </Link>
             </li>
           </ul>
           <div className="widget-area">
@@ -144,13 +143,11 @@ function Header(params: any) {
                     <ul className="sub-menu">
                       <li className="menu-item">
                         <a href="#top" id="chang-language-zhCN">
-                          {" "}
-                          简体中文{" "}
+                          简体中文
                         </a>
                       </li>
                       <li className="menu-item">
                         <a href="#top" id="chang-language-en">
-                          {" "}
                           English
                         </a>
                       </li>
@@ -162,7 +159,7 @@ function Header(params: any) {
             <aside className="widget widget_text">
               <div className="textwidget">
                 <div className="copyright-text">
-                  Copyright 2018 Corporate WordPress Theme by ThimPress.{" "}
+                  Copyright 2018 Corporate WordPress Theme by ThimPress.
                   <a href="#top">ThimPress</a>
                 </div>
               </div>
