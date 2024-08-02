@@ -1,7 +1,13 @@
+"use client";
+
 import Link from "next/link";
-// import { useState } from "react";
+import { useState } from "react";
 
 function Header(params: any) {
+  const [count, setCount] = useState(0);
+  function jiadenglu(params: any) {
+    console.log("jjjjjj", params);
+  }
   return (
     <>
       <header className="site-header sticky-header">
@@ -66,7 +72,11 @@ function Header(params: any) {
                     data-target="#login-dialogs"
                     id="header-login-link"
                   >
-                    <button type="button" className="btn header-menu-login-btn">
+                    <button
+                      type="button"
+                      className="btn header-menu-login-btn"
+                      onClick={jiadenglu}
+                    >
                       <i className="far fa-user"></i>
                       <span className="header-menu-login-span">Login</span>
                     </button>

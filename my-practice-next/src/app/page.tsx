@@ -1,7 +1,7 @@
-// "use client";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { Metadata } from "next/types";
 import { Suspense } from "react";
 
@@ -29,9 +29,9 @@ export default async function Home() {
     <>
       <Header></Header>
       <Suspense fallback={<p>Loading</p>}>
-        {" "}
         <p>{JSON.stringify(data)}</p>
       </Suspense>
+      <Footer data={data}></Footer>
     </>
   );
 }
