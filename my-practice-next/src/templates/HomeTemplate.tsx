@@ -3,19 +3,23 @@
 import Link from "next/link";
 import { useState, useEffect, Suspense, useMemo } from "react";
 import Image from "next/image";
+import HomePage from "@/views/HomePage";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LoginDialog from "@/components/LoginDialog";
-import HomePage from "@/views/HomePage";
+import ScrollToTop from "@/components/ScrollToTop";
+import VideoModal from "@/components/VideoModal";
+
 import "@/styles/index.scss";
 
 function HomeTemplate({ data }: any) {
   const [dialogVisible, setDialogVisible] = useState(0);
   const [dialogState, setDialogState] = useState(0);
   const [asideVisible, setAsideVisible] = useState(0);
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
   function to_setDialogState(_type: number) {
     if (_type === 1) {
-      setDialogVisible(0);
+      setDialogVisible(1);
       setDialogState(1);
     } else if (_type === 2) {
       setDialogVisible(1);
@@ -52,7 +56,7 @@ function HomeTemplate({ data }: any) {
           asideVisible={asideVisible}
           setAsideVisible={setAsideVisible}
         ></Header>
-        <HomePage data={data}></HomePage>
+        <HomePage data={data} setVideoModalOpen={setVideoModalOpen}></HomePage>
         <Footer></Footer>
       </div>
       <LoginDialog
@@ -60,6 +64,11 @@ function HomeTemplate({ data }: any) {
         dialogVisible={dialogVisible}
         to_setDialogState={to_setDialogState}
       ></LoginDialog>
+      <ScrollToTop></ScrollToTop>
+      <VideoModal
+        videoModalOpen={videoModalOpen}
+        setVideoModalOpen={setVideoModalOpen}
+      ></VideoModal>
     </>
   );
 }

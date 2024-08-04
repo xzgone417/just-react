@@ -115,13 +115,12 @@ function Header(props: any) {
                     style={{
                       width: 150,
                     }}
-                    dropdownStyle={{ color: "black" }}
+                    popupClassName="lang-s"
                     size="large"
                     onChange={handleChange}
                     options={[
                       { value: "jack", label: "Jack" },
                       { value: "lucy", label: "Lucy" },
-                      { value: "Yiminghe", label: "yiminghe" },
                       { value: "disabled", label: "Disabled", disabled: true },
                     ]}
                   />
@@ -131,33 +130,37 @@ function Header(props: any) {
           </div>
         </div>
       </header>
-      {props.asideVisible > 0 && (
-        <nav
-          className="mobile-menu-container mobile-effect"
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
-        >
-          <div className="inner-menu">
-            <ul className="nav navbar-nav">
-              <li>
-                <Link href="/"> Home </Link>
-              </li>
-              <li>
-                <Link href="/games"> Games </Link>
-              </li>
-              <li>
-                <Link href="/blogs"> Blogs </Link>
-              </li>
-              <li>
-                <Link href="/topup"> TouUp </Link>
-              </li>
-              <li>
-                <Link href="/user-center"> UserCenter </Link>
-              </li>
-            </ul>
-            <div className="widget-area">
-              {/* <aside className="widget widget_nav_menu">
+
+      <nav
+        className={
+          props.asideVisible > 0
+            ? "mobile-menu-container mobile-menu-open"
+            : "mobile-menu-container"
+        }
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      >
+        <div className="inner-menu">
+          <ul className="nav navbar-nav">
+            <li>
+              <Link href="/"> Home </Link>
+            </li>
+            <li>
+              <Link href="/games"> Games </Link>
+            </li>
+            <li>
+              <Link href="/blogs"> Blogs </Link>
+            </li>
+            <li>
+              <Link href="/topup"> TouUp </Link>
+            </li>
+            <li>
+              <Link href="/user-center"> UserCenter </Link>
+            </li>
+          </ul>
+          <div className="widget-area">
+            {/* <aside className="widget widget_nav_menu">
               <div className="menu-useful-links-container">
                 <ul className="menu">
                   <li className="menu-item menu-item-has-children">
@@ -178,18 +181,17 @@ function Header(props: any) {
                 </ul>
               </div>
             </aside> */}
-              <aside className="widget widget_text">
-                <div className="textwidget">
-                  <div className="copyright-text">
-                    Copyright 2018 Corporate WordPress Theme by ThimPress.
-                    <a href="#top">ThimPress</a>
-                  </div>
+            <aside className="widget widget_text">
+              <div className="textwidget">
+                <div className="copyright-text">
+                  Copyright 2018 Corporate WordPress Theme by ThimPress.
+                  <a href="#top">ThimPress</a>
                 </div>
-              </aside>
-            </div>
+              </div>
+            </aside>
           </div>
-        </nav>
-      )}
+        </div>
+      </nav>
     </>
   );
 }

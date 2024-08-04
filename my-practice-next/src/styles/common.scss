@@ -564,7 +564,7 @@ form#lostpasswordform .description {
     right          : 15px;
     cursor         : pointer;
     transition     : all 0.3s;
-    transform      : translateY(150px);
+    // transform      : translateY(150px);
     z-index        : 999;
     display        : flex;
     justify-content: center;
@@ -579,20 +579,6 @@ form#lostpasswordform .description {
     }
 }
 
-// .director-page .btn-back-to-top {
-//     background: #fd6500;
-
-//     &:hover {
-//         background: #ca5100;
-//     }
-// }
-
-// #thim-preloading {
-//     position : fixed;
-//     top      : 50%;
-//     transform: translateY(-50%);
-//     left     : 50%;
-// }
 
 .page-title .main-top {
     background-position: center center;

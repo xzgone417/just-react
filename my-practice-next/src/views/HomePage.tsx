@@ -5,7 +5,8 @@ import { useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-function HomePage({ data }: any) {
+function HomePage(props: any) {
+  const { data } = props;
   const slickSettings = {
     dots: false, //是否显示小圆点索引
     autoplay: true, //是否自动播放
@@ -46,6 +47,10 @@ function HomePage({ data }: any) {
                         <a
                           href={data.home_game.video_link}
                           className="btn-play popup-youtube"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            props.setVideoModalOpen(true);
+                          }}
                         ></a>
                       </div>
                     </div>
