@@ -1,11 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-
+import { useRef, useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 function HomePage({ data }: any) {
-  const [count, setCount] = useState(0);
-
+  const slickSettings = {
+    dots: false, //是否显示小圆点索引
+    autoplay: true, //是否自动播放
+    infinite: true, //是否无限循环
+    autoplaySpeed: 5000, //自动播放的时间
+    fade: true, //是否采用淡入淡出的效果
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  let sliderRef = useRef(null) as any;
+  const nextSlick = () => {
+    sliderRef?.slickNext();
+  };
+  const previousSlick = () => {
+    sliderRef?.slickPrev();
+  };
   return (
     <>
       <div id="main-content">
@@ -119,86 +135,91 @@ function HomePage({ data }: any) {
                   </div>
                 </div>
                 <div className="list-posts">
-                  <div
-                    className="slide-posts js-call-slick-col"
-                    data-slidestoshow="1"
-                    data-slidestoscroll="1"
-                    data-infinite="1"
-                    data-autoplay="1"
-                    data-autoplayspeed="5000"
-                    data-responsive="[1, 1], [1, 1], [1, 1], [1, 1], [1, 1]"
-                  >
+                  <div className="slide-posts js-call-slick-col">
                     <div className="wrap-arrow-slick">
-                      <div className="arow-slick prev-slick">
+                      <div
+                        className="arow-slick prev-slick"
+                        onClick={previousSlick}
+                      >
                         <i className="ion ion-ios-arrow-left"></i>
                       </div>
-                      <div className="arow-slick next-slick">
+                      <div
+                        className="arow-slick next-slick"
+                        onClick={nextSlick}
+                      >
                         <i className="ion ion-ios-arrow-right"></i>
                       </div>
                     </div>
                     <div className="slide-slick">
-                      {data.news_feed.top.map(
-                        (element: any, keying: string | number) => (
-                          <div className="item-slick" key={element.link}>
-                            <div className="post-item">
-                              <div className="row">
-                                <div className="col-lg-6">
-                                  <div className="feature-item">
-                                    <a href={element.link}>
-                                      <img src={element.img} alt="IMG" />
-                                    </a>
-                                    <div className="overlay"></div>
-                                    <div className="content">
-                                      <h4 className="title">
-                                        <a href={element.link}>
-                                          {element.desc}
-                                        </a>
-                                      </h4>
-                                      <div className="info">
-                                        <span className="item-info">
-                                          {element.date}
-                                        </span>
+                      <Slider
+                        {...slickSettings}
+                        ref={(slider) => {
+                          sliderRef = slider;
+                        }}
+                      >
+                        {data.news_feed.top.map(
+                          (element: any, keying: string | number) => (
+                            <div className="item-slick" key={element.link}>
+                              <div className="post-item">
+                                <div className="row">
+                                  <div className="col-lg-6">
+                                    <div className="feature-item">
+                                      <a href={element.link}>
+                                        <img src={element.img} alt="IMG" />
+                                      </a>
+                                      <div className="overlay"></div>
+                                      <div className="content">
+                                        <h4 className="title">
+                                          <a href={element.link}>
+                                            {element.desc}
+                                          </a>
+                                        </h4>
+                                        <div className="info">
+                                          <span className="item-info">
+                                            {element.date}
+                                          </span>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
-                                </div>
-                                <div className="col-lg-6">
-                                  {data.news_feed.item[keying].map(
-                                    (item: any, index: any) => (
-                                      <div className="item" key={item.link}>
-                                        <div className="pic">
-                                          <a href={item.link}>
-                                            <img src={item.img} alt="IMG" />
-                                          </a>
-                                        </div>
-                                        <div className="text">
-                                          <div className="info">
-                                            {item.date}
-                                          </div>
-                                          <h4 className="title">
-                                            <a
-                                              href={item.link}
-                                              title={item.tip_title}
-                                            >
-                                              {item.title}
+                                  <div className="col-lg-6">
+                                    {data.news_feed.item[keying].map(
+                                      (item: any) => (
+                                        <div className="item" key={item.link}>
+                                          <div className="pic">
+                                            <a href={item.link}>
+                                              <img src={item.img} alt="IMG" />
                                             </a>
-                                          </h4>
-                                          <div
-                                            className="description"
-                                            title={item.tip_desc}
-                                          >
-                                            {item.desc}
+                                          </div>
+                                          <div className="text">
+                                            <div className="info">
+                                              {item.date}
+                                            </div>
+                                            <h4 className="title">
+                                              <a
+                                                href={item.link}
+                                                title={item.tip_title}
+                                              >
+                                                {item.title}
+                                              </a>
+                                            </h4>
+                                            <div
+                                              className="description"
+                                              title={item.tip_desc}
+                                            >
+                                              {item.desc}
+                                            </div>
                                           </div>
                                         </div>
-                                      </div>
-                                    )
-                                  )}
+                                      )
+                                    )}
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        )
-                      )}
+                          )
+                        )}
+                      </Slider>
                     </div>
                   </div>
                 </div>

@@ -956,7 +956,7 @@
                 bottom        : -2px;
                 left          : 0;
                 background    : rgba(0, 0, 0, 0.2);
-                background    : linear-gradient(top, rgba(0, 0, 0, 0), #000);
+                background    : linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
                 opacity       : 0.8;
                 pointer-events: none;
             }

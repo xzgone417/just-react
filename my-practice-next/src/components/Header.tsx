@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import "@/styles/section.scss";
+import { Select, ConfigProvider } from "antd";
 
-function Header(params: any) {
-  const [count, setCount] = useState(0);
-  function jiadenglu(params: any) {
-    console.log("jjjjjj", params);
-  }
+function Header(props: any) {
+  const handleChange = (value: string) => {
+    console.log(`selected ${value}`);
+  };
   return (
     <>
       <header className="site-header sticky-header">
@@ -26,7 +27,12 @@ function Header(params: any) {
 
             <div className="header-menu-container">
               <div className="wrap-content-header">
-                <div className="menu-mobile-effect navbar-toggle">
+                <div
+                  className="menu-mobile-effect navbar-toggle"
+                  onClick={() => {
+                    props.setAsideVisible(1);
+                  }}
+                >
                   <div className="text-menu">Menu</div>
                   <div className="icon-wrap">
                     <i className="ion-navicon"></i>
@@ -35,7 +41,7 @@ function Header(params: any) {
                 <nav className="main-navigation">
                   <ul className="menu-lists">
                     <li className="menu-item-has-children">
-                      <Link href="/"> Home </Link>
+                      <Link href="/home"> Home </Link>
                     </li>
                     <li className="menu-item-has-children">
                       <Link href="/games"> Games </Link>
@@ -52,7 +58,7 @@ function Header(params: any) {
                   </ul>
                 </nav>
                 <div className="container-header-logo">
-                  <Link href="/">
+                  <Link href="/home">
                     <img
                       src="http://tmp-test.sofishgame.com/public/images/logo.png"
                       alt="IMG"
@@ -74,7 +80,9 @@ function Header(params: any) {
                     <button
                       type="button"
                       className="btn header-menu-login-btn"
-                      onClick={jiadenglu}
+                      onClick={() => {
+                        props.to_setDialogState(2);
+                      }}
                     >
                       <i className="far fa-user"></i>
                       <span className="header-menu-login-span">Login</span>
@@ -88,54 +96,68 @@ function Header(params: any) {
                     </div> --> */}
               </div>
               <div className="change-language-links">
-                <div className="dropdown">
-                  <button
-                    id="dLabel"
-                    type="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    className="dropdown-btn btn change-language-btn"
-                  >
-                    <i className="fas fa-map-marker-alt"></i>
-                    <span className="change-language-span">LANGUAGE</span>
-                  </button>
-                  <ul className="dropdown-menu" aria-labelledby="dLabel">
-                    <a href="#top" id="chang-language-en">
-                      <li className="dropdown-item-li">English</li>
-                    </a>
-                    <a href="#top" id="chang-language-zhCN">
-                      <li className="dropdown-item-li">简体中文</li>
-                    </a>
-                  </ul>
-                </div>
+                <ConfigProvider
+                  theme={{
+                    components: {
+                      Select: {
+                        selectorBg: "#e40914",
+                        optionHeight: 48,
+                        optionLineHeight: 2.4,
+                        colorBorder: "#fff",
+                        colorText: "#fff",
+                        colorIcon: "#fff",
+                      },
+                    },
+                  }}
+                >
+                  <Select
+                    defaultValue="lucy"
+                    style={{
+                      width: 150,
+                    }}
+                    dropdownStyle={{ color: "black" }}
+                    size="large"
+                    onChange={handleChange}
+                    options={[
+                      { value: "jack", label: "Jack" },
+                      { value: "lucy", label: "Lucy" },
+                      { value: "Yiminghe", label: "yiminghe" },
+                      { value: "disabled", label: "Disabled", disabled: true },
+                    ]}
+                  />
+                </ConfigProvider>
               </div>
             </div>
           </div>
         </div>
       </header>
-
-      <nav className="mobile-menu-container mobile-effect">
-        <div className="inner-menu">
-          <ul className="nav navbar-nav">
-            <li>
-              <Link href="/"> Home </Link>
-            </li>
-            <li>
-              <Link href="/games"> Games </Link>
-            </li>
-            <li>
-              <Link href="/blogs"> Blogs </Link>
-            </li>
-            <li>
-              <Link href="/topup"> TouUp </Link>
-            </li>
-            <li>
-              <Link href="/user-center"> UserCenter </Link>
-            </li>
-          </ul>
-          <div className="widget-area">
-            <aside className="widget widget_nav_menu">
+      {props.asideVisible > 0 && (
+        <nav
+          className="mobile-menu-container mobile-effect"
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        >
+          <div className="inner-menu">
+            <ul className="nav navbar-nav">
+              <li>
+                <Link href="/"> Home </Link>
+              </li>
+              <li>
+                <Link href="/games"> Games </Link>
+              </li>
+              <li>
+                <Link href="/blogs"> Blogs </Link>
+              </li>
+              <li>
+                <Link href="/topup"> TouUp </Link>
+              </li>
+              <li>
+                <Link href="/user-center"> UserCenter </Link>
+              </li>
+            </ul>
+            <div className="widget-area">
+              {/* <aside className="widget widget_nav_menu">
               <div className="menu-useful-links-container">
                 <ul className="menu">
                   <li className="menu-item menu-item-has-children">
@@ -155,18 +177,19 @@ function Header(params: any) {
                   </li>
                 </ul>
               </div>
-            </aside>
-            <aside className="widget widget_text">
-              <div className="textwidget">
-                <div className="copyright-text">
-                  Copyright 2018 Corporate WordPress Theme by ThimPress.
-                  <a href="#top">ThimPress</a>
+            </aside> */}
+              <aside className="widget widget_text">
+                <div className="textwidget">
+                  <div className="copyright-text">
+                    Copyright 2018 Corporate WordPress Theme by ThimPress.
+                    <a href="#top">ThimPress</a>
+                  </div>
                 </div>
-              </div>
-            </aside>
+              </aside>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      )}
     </>
   );
 }
