@@ -1,25 +1,25 @@
-import GamesTemplate from "@/templates/GamesTemplate";
+import BlogsTemplate from "@/templates/BlogsTemplate";
 import { Metadata } from "next/types";
 import { Suspense, useState } from "react";
 import Loading from "@/app/loading";
 export const metadata: Metadata = {
-  title: "SOFISH-Games",
-  description: "SOFISH-Games",
+  title: "SOFISH-Blogs",
+  description: "SOFISH-Blogs",
 };
 async function getData() {
-  const res = await fetch("https://fl.sogamecdn.com/officialweb/games.json");
+  const res = await fetch("https://fl.sogamecdn.com/officialweb/blogs.json");
   if (!res.ok) {
     throw new Error();
   }
   return res.json();
 }
 
-export default async function Games() {
+export default async function Blogs() {
   const data = await getData();
   return (
     <>
       <Suspense fallback={<Loading></Loading>}>
-        <GamesTemplate data={data}></GamesTemplate>
+        <BlogsTemplate data={data}></BlogsTemplate>
       </Suspense>
     </>
   );

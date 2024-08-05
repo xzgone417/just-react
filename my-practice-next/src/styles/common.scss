@@ -152,7 +152,7 @@ input:-webkit-autofill {
 //     }
 // }
 
-form#lostpasswordform .description {
+form#lost-password-form .description {
     line-height  : normal;
     margin-bottom: 20px;
 }
@@ -298,8 +298,9 @@ form#lostpasswordform .description {
 // }
 
 .site-content {
-    padding-top   : 6vh;
-    padding-bottom: 20px;
+    padding-top     : 6vh;
+    padding-bottom  : 20px;
+    background-color: #fff;
 
     .site-main,
     .widget-area {
@@ -552,23 +553,23 @@ form#lostpasswordform .description {
 }
 
 .btn-back-to-top {
-    font-size      : 30px;
-    color          : #fff;
-    text-align     : center;
-    line-height    : 47px;
-    background     : #e40914;
-    width          : 47px;
-    height         : 47px;
-    position       : fixed;
-    bottom         : 65px;
-    right          : 15px;
-    cursor         : pointer;
-    transition     : all 0.3s;
+    font-size         : 30px;
+    color             : #fff;
+    text-align        : center;
+    line-height       : 47px;
+    background        : #e40914;
+    width             : 47px;
+    height            : 47px;
+    position          : fixed;
+    bottom            : 65px;
+    right             : 15px;
+    cursor            : pointer;
+    transition        : all 0.3s;
     // transform      : translateY(150px);
-    z-index        : 999;
-    display        : flex;
-    justify-content: center;
-    align-items    : center;
+    z-index           : 999;
+    display           : flex;
+    justify-content   : center;
+    align-items       : center;
 
     &:hover {
         background: #b30710;

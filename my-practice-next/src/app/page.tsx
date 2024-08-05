@@ -1,5 +1,8 @@
-function p() {
-  return <div>p</div>;
+import { permanentRedirect } from "next/navigation";
+
+function IndexPage() {
+  permanentRedirect("/home");
+  return <></>;
 }
 
-export default p;
+export default IndexPage;

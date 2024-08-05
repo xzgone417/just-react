@@ -465,8 +465,80 @@
 }
 
 
-// @media (min-width: 1200px) {
-//     .container {
-//         width: 78vw;
-//     }
-// }
+/* 表单容器样式 */
+.dialog-container {
+    position        : fixed;
+    top             : 50%;
+    left            : 50%;
+    width           : 80vw;
+    min-width       : 260px;
+    max-width       : 1200px;
+    background-color: #f4f4f4;
+    padding         : 20px;
+    border-radius   : 20px;
+    box-shadow      : 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align      : start;
+    z-index         : 100;
+    height          : auto;
+    transform       : translateX(-50%) translateY(-50%);
+}
+
+.dialog-title {
+    position      : relative;
+    text-align    : center;
+    height        : 50px;
+    /* line-height: 30px; */
+}
+
+.close-dialog {
+    position  : absolute;
+    font-size : 30px;
+    right     : 5%;
+    top       : 5%;
+    /* display: inline-block; */
+}
+
+.dialog-list {
+    margin-top: -5px;
+}
+
+.dialog-list .server-item {
+    font-weight  : 300;
+    font-size    : 12px;
+    line-height  : 1.5;
+    color        : #6e6e6e;
+    word-break   : break-word;
+    padding-left : 10px;
+    position     : relative;
+    transition   : all 0.2s;
+    margin-bottom: 12px;
+}
+
+.dialog-list .server-item:last-child {
+    margin-bottom: 0;
+}
+
+.dialog-list .server-item .server-item-span {
+    display     : inline-block;
+    width       : 30%;
+    padding-left: 3%;
+}
+
+.dialog-list .server-item:hover {
+    color: #e40914;
+}
+
+.dialog-list .server-item:hover:before {
+    color: #e40914;
+}
+
+.dialog-pagination {
+    display        : flex;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .dialog-container {
+        max-width: 90vw;
+    }
+}

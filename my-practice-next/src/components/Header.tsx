@@ -3,9 +3,22 @@
 import Link from "next/link";
 import { useState } from "react";
 import "@/styles/section.scss";
-import { Select, ConfigProvider } from "antd";
+import { Select, ConfigProvider, Space, Drawer } from "antd";
+import { DrawerStyles } from "antd/es/drawer/DrawerPanel";
 
 function Header(props: any) {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const drawerStyles: DrawerStyles = {
+    header: {
+      paddingLeft: 0,
+    },
+    body: {
+      paddingLeft: 0,
+    },
+    footer: {
+      paddingLeft: 0,
+    },
+  };
   const handleChange = (value: string) => {
     console.log(`selected ${value}`);
   };
@@ -30,7 +43,7 @@ function Header(props: any) {
                 <div
                   className="menu-mobile-effect navbar-toggle"
                   onClick={() => {
-                    props.setAsideVisible(1);
+                    setDrawerOpen(true);
                   }}
                 >
                   <div className="text-menu">Menu</div>
@@ -106,23 +119,28 @@ function Header(props: any) {
                         colorBorder: "#fff",
                         colorText: "#fff",
                         colorIcon: "#fff",
+                        optionSelectedBg: "rgb(228, 9, 20,0.1)",
+                        optionSelectedFontWeight: 700,
                       },
                     },
                   }}
                 >
                   <Select
-                    defaultValue="lucy"
+                    defaultValue="en"
                     style={{
                       width: 150,
                     }}
-                    popupClassName="lang-s"
                     size="large"
                     onChange={handleChange}
                     options={[
-                      { value: "jack", label: "Jack" },
-                      { value: "lucy", label: "Lucy" },
-                      { value: "disabled", label: "Disabled", disabled: true },
+                      { value: "zhCN", label: "简体中文" },
+                      { value: "en", label: "English" },
                     ]}
+                    optionRender={(option) => (
+                      <Space>
+                        <span style={{ color: "#111" }}>{option.label}</span>
+                      </Space>
+                    )}
                   />
                 </ConfigProvider>
               </div>
@@ -130,68 +148,54 @@ function Header(props: any) {
           </div>
         </div>
       </header>
-
-      <nav
-        className={
-          props.asideVisible > 0
-            ? "mobile-menu-container mobile-menu-open"
-            : "mobile-menu-container"
-        }
-        onClick={(e) => {
-          e.stopPropagation();
+      <ConfigProvider
+        drawer={{
+          styles: drawerStyles,
         }}
       >
-        <div className="inner-menu">
-          <ul className="nav navbar-nav">
-            <li>
-              <Link href="/"> Home </Link>
-            </li>
-            <li>
-              <Link href="/games"> Games </Link>
-            </li>
-            <li>
-              <Link href="/blogs"> Blogs </Link>
-            </li>
-            <li>
-              <Link href="/topup"> TouUp </Link>
-            </li>
-            <li>
-              <Link href="/user-center"> UserCenter </Link>
-            </li>
-          </ul>
-          <div className="widget-area">
-            {/* <aside className="widget widget_nav_menu">
-              <div className="menu-useful-links-container">
-                <ul className="menu">
-                  <li className="menu-item menu-item-has-children">
-                    <a href="#top">LANGUAGE</a>
-                    <ul className="sub-menu">
-                      <li className="menu-item">
-                        <a href="#top" id="chang-language-zhCN">
-                          简体中文
-                        </a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="#top" id="chang-language-en">
-                          English
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+        <Drawer
+          title="SOFISH"
+          onClose={() => {
+            setDrawerOpen(false);
+          }}
+          width="45vw"
+          open={drawerOpen}
+          placement="left"
+          style={{ paddingLeft: 0 }}
+        >
+          <nav className="mobile-menu-container">
+            <div className="inner-menu">
+              <ul className="nav navbar-nav">
+                <li>
+                  <Link href="/"> Home </Link>
+                </li>
+                <li>
+                  <Link href="/games"> Games </Link>
+                </li>
+                <li>
+                  <Link href="/blogs"> Blogs </Link>
+                </li>
+                <li>
+                  <Link href="/topup"> TouUp </Link>
+                </li>
+                <li>
+                  <Link href="/user-center"> UserCenter </Link>
+                </li>
+              </ul>
+              <div className="widget-area">
+                <aside className="widget widget_text">
+                  <div className="textwidget">
+                    <div className="copyright-text">
+                      Copyright 2018 Corporate WordPress Theme by ThimPress.
+                      <a href="#top">ThimPress</a>
+                    </div>
+                  </div>
+                </aside>
               </div>
-            </aside> */}
-            <aside className="widget widget_text">
-              <div className="textwidget">
-                <div className="copyright-text">
-                  Copyright 2018 Corporate WordPress Theme by ThimPress.
-                  <a href="#top">ThimPress</a>
-                </div>
-              </div>
-            </aside>
-          </div>
-        </div>
-      </nav>
+            </div>
+          </nav>
+        </Drawer>
+      </ConfigProvider>
     </>
   );
 }

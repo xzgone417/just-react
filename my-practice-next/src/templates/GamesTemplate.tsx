@@ -2,20 +2,16 @@
 
 import Link from "next/link";
 import { useState, useEffect, Suspense, useMemo } from "react";
-import Image from "next/image";
-import HomePage from "@/views/HomePage";
+import GamesPage from "@/views/GamesPage";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LoginDialog from "@/components/LoginDialog";
 import ScrollToTop from "@/components/ScrollToTop";
-import VideoModal from "@/components/VideoModal";
-
-import "@/styles/index.scss";
+import "@/styles/games.scss";
 
 function HomeTemplate({ data }: any) {
   const [dialogVisible, setDialogVisible] = useState(0);
   const [dialogState, setDialogState] = useState(0);
-  const [videoModalOpen, setVideoModalOpen] = useState(false);
   function to_setDialogState(_type: number) {
     if (_type === 1) {
       setDialogVisible(1);
@@ -36,7 +32,7 @@ function HomeTemplate({ data }: any) {
     <>
       <div className="responsive home-1" id="wrapper-container">
         <Header to_setDialogState={to_setDialogState}></Header>
-        <HomePage data={data} setVideoModalOpen={setVideoModalOpen}></HomePage>
+        <GamesPage data={data}></GamesPage>
         <Footer></Footer>
       </div>
       <LoginDialog
@@ -45,10 +41,6 @@ function HomeTemplate({ data }: any) {
         to_setDialogState={to_setDialogState}
       ></LoginDialog>
       <ScrollToTop></ScrollToTop>
-      <VideoModal
-        videoModalOpen={videoModalOpen}
-        setVideoModalOpen={setVideoModalOpen}
-      ></VideoModal>
     </>
   );
 }

@@ -12,7 +12,7 @@ function HomePage(props: any) {
     autoplay: true, //是否自动播放
     infinite: true, //是否无限循环
     autoplaySpeed: 5000, //自动播放的时间
-    fade: true, //是否采用淡入淡出的效果
+    fade: false, //是否采用淡入淡出的效果
     slidesToShow: 1,
     slidesToScroll: 1,
   };

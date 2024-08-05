@@ -74,21 +74,22 @@
         // right     : 0;
         // bottom    : 0;
         // top       : 0;
-        background-color      : #fff;
-        transition            : all 0.6s;
+        position                 : relative;
+        background-color         : #fff;
+        transition               : all 0.6s;
         // filter             : alpha(opacity=0);
         // opacity            : 0;
         // transform          : translate(0, -50px);
         // visibility         : hidden;
         // width           : 100%;
-        display               : flex;
-        width                 : 1150px;
-        margin                : 20vh auto;
-        border-radius         : 10px;
-        transform             : translate(0, 0);
-        opacity               : 1;
-        visibility            : visible;
-        height                : auto;
+        display                  : flex;
+        width                    : 1150px;
+        margin                   : 20vh auto;
+        border-radius            : 10px;
+        // transform             : translate(0, 0);
+        opacity                  : 1;
+        visibility               : visible;
+        height                   : auto;
         // &.active {
         //     z-index   : 2;
 
@@ -99,7 +100,7 @@
     .popup-close {
         cursor     : pointer;
         position   : absolute;
-        right      : -40px;
+        right      : -30px;
         top        : -50px;
         line-height: 50px;
         text-align : center;
@@ -291,35 +292,53 @@
 .popup-password-eye {
     position  : absolute;
     right     : 0.5em;
-    z-index   : 2;
+    z-index   : 4;
     text-align: center;
     top       : calc(25% - 0.1em);
     font-size : 1em;
     cursor    : pointer;
 }
 
+.auth-code-btn {
+    position  : absolute;
+    right     : 0.5em;
+    z-index   : 4;
+    text-align: center;
+    top       : 15%;
+    font-size : 1em;
+    cursor    : pointer;
+}
+
 @media (max-width: 1400px) and (min-width: 1024px) {
-    .login-popup {
-        width: 930px;
+    .login-dialogs-content {
+        .login-popup {
+            width: 930px;
+        }
     }
+
 }
 
 @media (max-width: 1024px) and (min-width: 767px) {
-    .login-popup {
-        width: 80%;
+    .login-dialogs-content {
+        .login-popup {
+            width: 80vw;
 
-        .media-content {
-            width: 230px;
+            .media-content {
+                width: 200px;
+            }
         }
     }
+
 }
 
 @media (max-width: 767px) {
-    .login-popup {
-        width: 80%;
+    .login-dialogs-content {
+        .login-popup {
+            width: 80vw;
 
-        .media-content {
-            display: none;
+            .media-content {
+                display: none;
+            }
         }
     }
 }
@@ -327,10 +346,8 @@
 @media (max-width: 480px) {
     .login-dialogs-content {
 
-        // 
-
         .login-popup {
-            width : calc(90% - 50px);
+            width : calc(90vw - 50px);
             margin: 10vh auto;
 
             .inner-login {
@@ -385,7 +402,7 @@
             }
         }
 
-        .box-lostpass {
+        .box-lost-pass {
             .inner-login {
                 padding: 10vw 8vw 8vw 8vw;
 
@@ -398,7 +415,7 @@
                     }
                 }
 
-                #lostpasswordform {
+                #lost-password-form {
                     .description {
                         display: none;
                     }

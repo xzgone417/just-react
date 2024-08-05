@@ -1,17 +1,56 @@
 "use client";
 import Link from "next/link";
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
+import { Button } from "antd";
 import "@/styles/dialog.scss";
 
 function LoginDialog(props: any) {
-  // useEffect(() => {}, [props.count]);
+  const registerUserNameRef = useRef<HTMLInputElement>(null);
+  const registerUserEmailRef = useRef<HTMLInputElement>(null);
+  const registerProtocolRef = useRef<HTMLInputElement>(null);
+  const loginUserNameRef = useRef<HTMLInputElement>(null);
+  const loginPasswordRef = useRef<HTMLInputElement>(null);
+  const loginRememberRef = useRef<HTMLInputElement>(null);
+  const lostUserNameRef = useRef<HTMLInputElement>(null);
+  const lostEmailRef = useRef<HTMLInputElement>(null);
+  const lostAuthCodeRef = useRef<HTMLInputElement>(null);
+  const lostNewPasswordRef = useRef<HTMLInputElement>(null);
+  const [authCodeState, setAuthCodeState] = useState("发送");
+  const handleRegisterFormData = (e: any) => {
+    e.preventDefault();
+    console.log(
+      registerUserNameRef.current && registerUserNameRef.current.value
+    );
+    console.log(
+      registerUserEmailRef.current && registerUserEmailRef.current.value
+    );
+    console.log(
+      registerProtocolRef.current && registerProtocolRef.current.value,
+      "x",
+      registerProtocolRef.current!.checked
+    );
+  };
+  const handleLoginFormData = (e: any) => {
+    e.preventDefault();
+  };
+  const handleLostPasswordFormData = (e: any) => {
+    e.preventDefault();
+  };
   const LoginBox: FC<any> = (params) => {
     if (params.dialogState === 1) {
       return (
-        <div className="login-popup box-register">
+        <div
+          className="login-popup box-register"
+          role="dialog"
+          onClick={(e) => {
+            e.stopPropagation();
+            props.to_setDialogState(1);
+          }}
+        >
           <div
             className="popup-close"
-            onClick={() => {
+            onClick={(e) => {
+              e.stopPropagation();
               props.to_setDialogState(0);
             }}
           >
@@ -22,7 +61,8 @@ function LoginDialog(props: any) {
             <h3 className="title">
               <strong
                 className="current-title"
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation();
                   props.to_setDialogState(1);
                 }}
               >
@@ -31,7 +71,8 @@ function LoginDialog(props: any) {
               /{" "}
               <strong
                 className="display-box"
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation();
                   props.to_setDialogState(2);
                 }}
               >
@@ -41,13 +82,14 @@ function LoginDialog(props: any) {
             <div className="form-row">
               <div className="wrap-form">
                 <div className="form-desc">We will need...</div>
-                <form id="registerform">
+                <form id="register-form">
                   <p className="login-username">
                     <input
                       type="text"
                       name="userName"
                       placeholder="Username"
                       className="input"
+                      ref={registerUserNameRef}
                     />
                   </p>
                   <p className="login-email">
@@ -56,6 +98,7 @@ function LoginDialog(props: any) {
                       name="userEmail"
                       placeholder="Email"
                       className="input"
+                      ref={registerUserEmailRef}
                     />
                   </p>
                   <p className="text-mail">
@@ -66,15 +109,20 @@ function LoginDialog(props: any) {
                       type="submit"
                       id="submit-register-form"
                       className="button btn-danger button-large submit-btn"
+                      onSubmit={handleRegisterFormData}
                     >
                       Register
                     </button>
                   </p>
                   <p className="text-protocol">
-                    <input type="checkbox" name="protocol" />
-                    <strong data-toggle="modal" data-target="#protocol-dialog">
-                      我已閱讀並同意《會員條款及管理規章》
-                    </strong>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="protocol"
+                        ref={registerProtocolRef}
+                      />
+                      <strong>我已閱讀並同意《會員條款及管理規章》</strong>
+                    </label>
                   </p>
                 </form>
               </div>
@@ -84,10 +132,17 @@ function LoginDialog(props: any) {
       );
     } else if (params.dialogState === 2) {
       return (
-        <div className="login-popup box-login">
+        <div
+          className="login-popup box-login"
+          onClick={(e) => {
+            e.stopPropagation();
+            props.to_setDialogState(2);
+          }}
+        >
           <div
             className="popup-close"
-            onClick={() => {
+            onClick={(e) => {
+              e.stopPropagation();
               props.to_setDialogState(0);
             }}
           >
@@ -98,7 +153,8 @@ function LoginDialog(props: any) {
             <h3 className="title">
               <strong
                 className="display-box"
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation();
                   props.to_setDialogState(1);
                 }}
               >
@@ -107,7 +163,8 @@ function LoginDialog(props: any) {
               /{" "}
               <strong
                 className="current-title"
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation();
                   props.to_setDialogState(2);
                 }}
               >
@@ -117,13 +174,14 @@ function LoginDialog(props: any) {
             <div className="form-row">
               <div className="wrap-form">
                 <div className="form-desc"> We will need... </div>
-                <form id="loginform">
+                <form id="login-form">
                   <p className="login-username">
                     <input
                       type="text"
                       name="userName"
                       placeholder="Username"
                       className="input"
+                      ref={loginUserNameRef}
                     />
                   </p>
                   <p className="login-password">
@@ -132,6 +190,7 @@ function LoginDialog(props: any) {
                       name="password"
                       placeholder="Password"
                       className="input "
+                      ref={loginPasswordRef}
                     />
                     <i
                       className="far fa-eye-slash popup-password-eye"
@@ -142,8 +201,9 @@ function LoginDialog(props: any) {
                     <label>
                       <input
                         type="checkbox"
-                        name="rememberMe"
+                        name="remember"
                         id="rememberMe"
+                        ref={loginRememberRef}
                       />
                       Remember Me
                     </label>
@@ -153,6 +213,7 @@ function LoginDialog(props: any) {
                       type="submit"
                       id="submit-login-form"
                       className="button btn-danger button-large submit-btn"
+                      onSubmit={handleLoginFormData}
                     >
                       Login
                     </button>
@@ -161,7 +222,8 @@ function LoginDialog(props: any) {
                 <p className="link-bottom">
                   <strong
                     className="display-box"
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.stopPropagation();
                       props.to_setDialogState(3);
                     }}
                   >
@@ -175,10 +237,17 @@ function LoginDialog(props: any) {
       );
     } else if (params.dialogState === 3) {
       return (
-        <div className="login-popup box-lostpass">
+        <div
+          className="login-popup box-lost-pass"
+          onClick={(e) => {
+            e.stopPropagation();
+            props.to_setDialogState(3);
+          }}
+        >
           <div
             className="popup-close"
-            onClick={() => {
+            onClick={(e) => {
+              e.stopPropagation();
               props.to_setDialogState(0);
             }}
           >
@@ -189,7 +258,8 @@ function LoginDialog(props: any) {
             <h3 className="title">
               <strong
                 className="display-box"
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation();
                   props.to_setDialogState(1);
                 }}
               >
@@ -198,7 +268,8 @@ function LoginDialog(props: any) {
               /{" "}
               <strong
                 className="current-title"
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation();
                   props.to_setDialogState(3);
                 }}
               >
@@ -209,8 +280,8 @@ function LoginDialog(props: any) {
             <div className="form-row">
               <div className="wrap-form">
                 <form
-                  name="lostpasswordform"
-                  id="lostpasswordform"
+                  name="lost-password-form"
+                  id="lost-password-form"
                   method="post"
                 >
                   <p className="description">
@@ -221,36 +292,43 @@ function LoginDialog(props: any) {
                     <input
                       placeholder="请输入您的账号"
                       type="text"
-                      name="user_login_lostpass"
+                      name="lostUserName"
                       id="lost-password-account"
                       className="input"
+                      ref={lostUserNameRef}
                     />
                   </p>
                   <p className="login-username">
                     <input
                       placeholder="请输入您的邮箱"
-                      type="text"
-                      name="user_login_lostpass"
+                      type="email"
+                      name="lostEmail"
                       id="lost-password-email"
                       className="input"
+                      ref={lostEmailRef}
                     />
                   </p>
                   <p className="login-username">
                     <input
                       placeholder="请输入验证码"
                       type="text"
-                      name="user_login_lostpass"
+                      name="lostAuthCode"
                       id="lost-password-auth-code"
                       className="input"
+                      ref={lostAuthCodeRef}
                     />
+                    <Button type="primary" danger className="auth-code-btn">
+                      {authCodeState}
+                    </Button>
                   </p>
                   <p className="login-username">
                     <input
-                      placeholder="请输入您想修改的密码"
-                      type="text"
-                      name="user_login_lostpass"
+                      placeholder="请输入新密码"
+                      type="password"
+                      name="lostNewPassword"
                       id="lost-password-password"
                       className="input"
+                      ref={lostNewPasswordRef}
                     />
                   </p>
                   <p>
@@ -258,18 +336,20 @@ function LoginDialog(props: any) {
                       type="submit"
                       id="submit-lost-password-form"
                       className="button btn-danger button-large submit-btn"
+                      onSubmit={handleLostPasswordFormData}
                     >
                       Reset Password
                     </button>
                   </p>
                   <p
                     className="link-bottom"
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.stopPropagation();
                       props.to_setDialogState(2);
                     }}
                   >
                     Are you a member?
-                    <strong className="display-box">Sign in now</strong>
+                    <strong className="display-box"> Sign in now</strong>
                   </p>
                 </form>
               </div>
@@ -284,7 +364,13 @@ function LoginDialog(props: any) {
   return (
     <>
       {props.dialogVisible > 0 ? (
-        <div className="login-dialogs-content" role="dialog">
+        <div
+          className="login-dialogs-content"
+          onClick={(e) => {
+            e.stopPropagation();
+            props.to_setDialogState(0);
+          }}
+        >
           <LoginBox dialogState={props.dialogState}></LoginBox>
         </div>
       ) : (
@@ -306,10 +392,7 @@ function LoginDialog(props: any) {
           </div>
         </div>
       </div>
-
-      <div id="back-to-top" className="btn-back-to-top">
-        <i className="ion ion-ios-arrow-thin-up"></i>
-      </div> */}
+*/}
     </>
   );
 }
