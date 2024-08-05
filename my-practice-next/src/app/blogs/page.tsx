@@ -6,16 +6,14 @@ export const metadata: Metadata = {
   title: "SOFISH-Blogs",
   description: "SOFISH-Blogs",
 };
-async function getData() {
+async function getPageData() {
   const res = await fetch("https://fl.sogamecdn.com/officialweb/blogs.json");
-  if (!res.ok) {
-    throw new Error();
-  }
+if (!res.ok) throw new Error();
   return res.json();
 }
 
 export default async function Blogs() {
-  const data = await getData();
+  const data = await getPageData();
   return (
     <>
       <Suspense fallback={<Loading></Loading>}>

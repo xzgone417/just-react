@@ -5,7 +5,7 @@ import { useState } from "react";
 
 function GamesPage(props: any) {
   const { data } = props;
-  function toOpenMoreServers() {}
+  const [serversDialog, setServersDialog] = useState(0);
   const dateFormat = function (dateString: string | number | Date) {
     const date = new Date(dateString);
     const options = { year: "numeric", month: "long", day: "numeric" } as any;
@@ -23,6 +23,21 @@ function GamesPage(props: any) {
     } as any;
     const formattedDate = date
       .toLocaleString("en-US", options)
+      .replace(/\//g, "-");
+    return formattedDate;
+  }
+  function dateTimeFormate(timestamp: any) {
+    const date = new Date(Number(timestamp));
+    const options = {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    } as any;
+    const formattedDate = date
+      .toLocaleString(undefined, options)
       .replace(/\//g, "-");
     return formattedDate;
   }
@@ -100,13 +115,14 @@ function GamesPage(props: any) {
                 <aside className="widget widget_product_categories">
                   <div className="product-categories-title">
                     <h3 className="widget-title">Servers</h3>
-                    <a
-                      href="#top"
+                    <strong
                       className="right-product-categories-title"
-                      onClick={toOpenMoreServers}
+                      onClick={() => {
+                        setServersDialog(1);
+                      }}
                     >
                       MORE <i className="fas fa-angle-double-right"></i>
-                    </a>
+                    </strong>
                   </div>
                   <ul className="product-categories">
                     {data.server_list[0].map((item: any) => (
@@ -156,6 +172,76 @@ function GamesPage(props: any) {
           </div>
         </div>
       </div>
+      {serversDialog > 0 && (
+        <>
+          <div className="servers-dialog-container">
+            <div className="servers-dialog-title">
+              <h3 className="title">开服讯息</h3>
+              <strong
+                onClick={() => {
+                  setServersDialog(0);
+                }}
+                className="close-servers-dialog"
+              >
+                <i className="fas fa-times"></i>
+              </strong>
+            </div>
+            <div className="servers-dialog-content">
+              <ul className="servers-dialog-list">
+                {data.server_list[0].map((item: any) => (
+                  <li className="server-item">
+                    <a className="left-server server-item-span" href="#top">
+                      {item.game}
+                    </a>
+                    <span className="server-item-span"> {item.name} </span>
+                    <span className="server-item-span">
+                      {dateTimeFormate(item.time)}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div className="servers-dialog-pagination">
+                <nav aria-label="Page navigation">
+                  <ul className="pagination">
+                    <li>
+                      <a href="#top" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#top">1</a>
+                    </li>
+                    <li>
+                      <a href="#top">2</a>
+                    </li>
+                    <li>
+                      <a href="#top">3</a>
+                    </li>
+                    <li>
+                      <a href="#top">4</a>
+                    </li>
+                    <li>
+                      <a href="#top">5</a>
+                    </li>
+                    <li>
+                      <a href="#top" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div
+            className="the-overlay"
+            onClick={(e) => {
+              e.stopPropagation();
+              setServersDialog(0);
+            }}
+          ></div>
+        </>
+      )}
     </>
   );
 }

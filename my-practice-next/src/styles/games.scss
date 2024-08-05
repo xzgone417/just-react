@@ -231,6 +231,7 @@
         justify-content: space-between;
 
         .right-product-categories-title {
+            color       : #75a6f0;
             display     : inline-block;
             margin-right: 17px;
         }
@@ -466,7 +467,7 @@
 
 
 /* 表单容器样式 */
-.dialog-container {
+.servers-dialog-container {
     position        : fixed;
     top             : 50%;
     left            : 50%;
@@ -483,14 +484,13 @@
     transform       : translateX(-50%) translateY(-50%);
 }
 
-.dialog-title {
-    position      : relative;
-    text-align    : center;
-    height        : 50px;
-    /* line-height: 30px; */
+.servers-dialog-title {
+    position  : relative;
+    text-align: center;
+    height    : 50px;
 }
 
-.close-dialog {
+.close-servers-dialog {
     position  : absolute;
     font-size : 30px;
     right     : 5%;
@@ -498,11 +498,11 @@
     /* display: inline-block; */
 }
 
-.dialog-list {
+.servers-dialog-list {
     margin-top: -5px;
 }
 
-.dialog-list .server-item {
+.servers-dialog-list .server-item {
     font-weight  : 300;
     font-size    : 12px;
     line-height  : 1.5;
@@ -514,31 +514,41 @@
     margin-bottom: 12px;
 }
 
-.dialog-list .server-item:last-child {
+.servers-dialog-list .server-item:last-child {
     margin-bottom: 0;
 }
 
-.dialog-list .server-item .server-item-span {
+.servers-dialog-list .server-item .server-item-span {
     display     : inline-block;
     width       : 30%;
     padding-left: 3%;
 }
 
-.dialog-list .server-item:hover {
+.servers-dialog-list .server-item:hover {
     color: #e40914;
 }
 
-.dialog-list .server-item:hover:before {
+.servers-dialog-list .server-item:hover:before {
     color: #e40914;
 }
 
-.dialog-pagination {
+.servers-dialog-pagination {
     display        : flex;
     justify-content: center;
 }
 
 @media (max-width: 600px) {
-    .dialog-container {
+    .servers-dialog-container {
         max-width: 90vw;
     }
+}
+
+.the-overlay {
+    position  : fixed;
+    z-index   : 33;
+    width     : 100vw;
+    height    : 100vh;
+    top       : 0;
+    left      : 0;
+    background: rgba(17, 17, 17, 0.3);
 }

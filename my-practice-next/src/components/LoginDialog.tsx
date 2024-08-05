@@ -15,7 +15,13 @@ function LoginDialog(props: any) {
   const lostEmailRef = useRef<HTMLInputElement>(null);
   const lostAuthCodeRef = useRef<HTMLInputElement>(null);
   const lostNewPasswordRef = useRef<HTMLInputElement>(null);
-  const [authCodeState, setAuthCodeState] = useState("发送");
+  const [authCodeState, setAuthCodeState] = useState(0);
+  const [authCodeText, setAuthCodeText] = useState("发送");
+
+  useEffect(() => {
+    if (authCodeState > 0) {
+    }
+  }, [authCodeState]);
   const handleRegisterFormData = (e: any) => {
     e.preventDefault();
     console.log(
@@ -36,6 +42,18 @@ function LoginDialog(props: any) {
   const handleLostPasswordFormData = (e: any) => {
     e.preventDefault();
   };
+  function startCountdown(times: number, type?: number) {
+    let emailTimeCount = times;
+    let codeTimer = setInterval(() => {
+      if (emailTimeCount > 0 && emailTimeCount <= times) {
+        emailTimeCount--;
+      } else {
+        // emailTimeShow = false;
+        // emailText = $t("sf_action_send");
+        clearInterval(codeTimer);
+      }
+    }, 1000);
+  }
   const LoginBox: FC<any> = (params) => {
     if (params.dialogState === 1) {
       return (

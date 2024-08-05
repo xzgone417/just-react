@@ -1,25 +1,25 @@
-import HomeTemplate from "@/templates/HomeTemplate";
+import GiftCenterTemplate from "@/templates/GiftCenterTemplate";
 import { Metadata } from "next/types";
 import { Suspense, useState } from "react";
 import Loading from "@/app/loading";
 export const metadata: Metadata = {
-  title: "SOFISH-HOME",
-  description: "SOFISH-HOME",
+  title: "SOFISH-GiftCenter",
+  description: "SOFISH-GiftCenter",
 };
 async function getPageData() {
   const res = await fetch(
-    "https://fl.sogamecdn.com/officialweb/homepage/data.json"
+    "https://fl.sogamecdn.com/officialweb/gift-center.json"
   );
-if (!res.ok) throw new Error();
+  if (!res.ok) throw new Error();
   return res.json();
 }
 
-export default async function Home() {
+export default async function Games() {
   const data = await getPageData();
   return (
     <>
       <Suspense fallback={<Loading></Loading>}>
-        <HomeTemplate data={data}></HomeTemplate>
+        <GiftCenterTemplate data={data}></GiftCenterTemplate>
       </Suspense>
     </>
   );

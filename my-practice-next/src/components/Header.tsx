@@ -63,7 +63,7 @@ function Header(props: any) {
                       <Link href="/blogs"> Blogs </Link>
                     </li>
                     <li className="menu-item-has-children">
-                      <Link href="/topup"> TopUp </Link>
+                      <Link href="/top-up"> TopUp </Link>
                     </li>
                     <li className="menu-item-has-children">
                       <Link href="/user-center"> UserCenter </Link>

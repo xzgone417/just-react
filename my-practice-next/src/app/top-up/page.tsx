@@ -1,25 +1,23 @@
-import HomeTemplate from "@/templates/HomeTemplate";
+import TopUpTemplate from "@/templates/TopUpTemplate";
 import { Metadata } from "next/types";
 import { Suspense, useState } from "react";
 import Loading from "@/app/loading";
 export const metadata: Metadata = {
-  title: "SOFISH-HOME",
-  description: "SOFISH-HOME",
+  title: "SOFISH-TopUp",
+  description: "SOFISH-TopUp",
 };
 async function getPageData() {
-  const res = await fetch(
-    "https://fl.sogamecdn.com/officialweb/homepage/data.json"
-  );
+  const res = await fetch("https://fl.sogamecdn.com/officialweb/topup.json");
 if (!res.ok) throw new Error();
   return res.json();
 }
 
-export default async function Home() {
+export default async function Games() {
   const data = await getPageData();
   return (
     <>
       <Suspense fallback={<Loading></Loading>}>
-        <HomeTemplate data={data}></HomeTemplate>
+        <TopUpTemplate data={data}></TopUpTemplate>
       </Suspense>
     </>
   );
