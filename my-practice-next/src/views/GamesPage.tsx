@@ -71,23 +71,23 @@ function GamesPage(props: any) {
                                   <img src={item.img} alt="IMG" />
                                 </a>
                                 <div className="btn-play">
-                                  <div className="btn-gplay">
+                                  <div className="btn-gPlay">
                                     <a href={item.gp_link} target="_blank">
                                       <img
-                                        className="a-btn-gplay"
+                                        className="a-btn-gPlay"
                                         src="./public/images/store-button-google-play.svg"
                                         alt=""
                                       />
                                     </a>
                                   </div>
-                                  <div className="btn-aplay">
+                                  <div className="btn-aPlay">
                                     <a
                                       href="#top"
                                       aria-disabled="true"
                                       target="_blank"
                                     >
                                       <img
-                                        className="a-btn-aplay"
+                                        className="a-btn-aPlay"
                                         src="./public/images/store-button-app-store.svg"
                                         alt=""
                                       />
@@ -155,11 +155,7 @@ function GamesPage(props: any) {
                               <a href={item.link}>{item.title}</a>
                             </h4>
                             <span className="price">
-                              <ins>
-                                <span className="woocommerce-Price-amount">
-                                  {dateFormat(item.date)}
-                                </span>
-                              </ins>
+                              <ins>{dateFormat(item.date)}</ins>
                             </span>
                           </div>
                         </div>

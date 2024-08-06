@@ -26,7 +26,7 @@ function HomePage(props: any) {
   return (
     <>
       <div id="main-content">
-        <div className="thim-banner_home-1">
+        <div className="home-first-background">
           <div className="overlay-area"></div>
           <div className="container">
             <div className="home-st-list-videos big-home-img">
@@ -65,7 +65,7 @@ function HomePage(props: any) {
                         <div className="description">{data.home_game.desc}</div>
                         <a
                           href={data.home_game.link}
-                          className="btn-readmore btn-normal shape-round"
+                          className="btn-read-more btn-normal shape-round"
                           target="_blank"
                         >
                           read more
@@ -77,7 +77,7 @@ function HomePage(props: any) {
               </div>
             </div>
 
-            <div className="home-st-list-videos list-home-imgs">
+            <div className="home-st-list-videos list-home-images">
               <div className="wrap-element">
                 <div className="normal-items">
                   <div className="row">
@@ -90,23 +90,23 @@ function HomePage(props: any) {
                             </a>
                             <div className="label">{item.tag}</div>
                             <div className="btn-play">
-                              <div className="btn-gplay">
+                              <div className="btn-gPlay">
                                 <a href={item.gp_link} target="_blank">
                                   <img
-                                    className="a-btn-gplay"
+                                    className="a-btn-gPlay"
                                     src="http://tmp-test.sofishgame.com/public/images/store-button-google-play.svg"
                                     alt=""
                                   />
                                 </a>
                               </div>
-                              <div className="btn-aplay">
+                              <div className="btn-aPlay">
                                 <a
                                   href="#top"
                                   aria-disabled="true"
                                   target="_blank"
                                 >
                                   <img
-                                    className="a-btn-aplay"
+                                    className="a-btn-aPlay"
                                     src="http://tmp-test.sofishgame.com/public/images/store-button-app-store.svg"
                                     alt=""
                                   />

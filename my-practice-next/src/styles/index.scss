@@ -1,4 +1,4 @@
-.thim-banner_home-1 {
+.home-first-background {
     padding-top        : 100px;
     padding-bottom     : 65px;
     background-position: center center;
@@ -196,7 +196,7 @@
                     margin-bottom: 32px;
                 }
 
-                .btn-readmore {
+                .btn-read-more {
                     font-weight   : 500;
                     font-size     : 14px;
                     line-height   : 1.5;
@@ -214,7 +214,7 @@
         }
     }
 
-    &.list-home-imgs .normal-items .item {
+    &.list-home-images .normal-items .item {
         .pic {
             overflow     : hidden;
             position     : relative;
@@ -258,10 +258,10 @@
                 &:hover {
                     opacity: 0.7;
 
-                    .btn-gplay,
-                    .btn-aplay,
-                    .a-btn-gplay,
-                    .a-btn-aplay {
+                    .btn-gPlay,
+                    .btn-aPlay,
+                    .a-btn-gPlay,
+                    .a-btn-aPlay {
                         opacity: 1;
                     }
                 }
@@ -270,7 +270,7 @@
 
 
             .btn-play {
-                .btn-gplay {
+                .btn-gPlay {
                     width           : 48%;
                     height          : 100%;
                     background-color: #1b1e21;
@@ -278,7 +278,7 @@
                     transition      : all 0.3s;
                 }
 
-                .btn-aplay {
+                .btn-aPlay {
                     width           : 48%;
                     height          : 100%;
                     background-color: #1b1e21;
@@ -286,13 +286,13 @@
                     transition      : all 0.3s;
                 }
 
-                .btn-gplay .a-btn-gplay {
+                .btn-gPlay .a-btn-gPlay {
                     width     : 100%;
                     height    : 100%;
                     transition: all 0.3s;
                 }
 
-                .btn-aplay .a-btn-aplay {
+                .btn-aPlay .a-btn-aPlay {
                     width     : 100%;
                     height    : 100%;
                     transition: all 0.3s;
@@ -330,190 +330,10 @@
             word-break    : break-word;
         }
     }
-
-    &.vblog-layout-slider-3 {
-        .heading-post {
-            text-align   : center;
-            margin-bottom: 32px;
-            position     : relative;
-            z-index      : 1;
-
-            .text {
-                display   : inline-block;
-                background: #fff;
-                padding   : 0 16px;
-
-                .title {
-                    font-family   : Playfair Display;
-                    font-weight   : 700;
-                    font-size     : 22px;
-                    line-height   : 1.2;
-                    color         : #1f1f1f;
-                    text-transform: uppercase;
-                    word-break    : break-word;
-                }
-            }
-
-            .line {
-                width            : 100%;
-                height           : 1px;
-                background-image : url(http://tmp-test.sofishgame.com/public/images/pattern-line.png);
-                background-repeat: repeat-x;
-                position         : absolute;
-                z-index          : -1;
-                left             : 0;
-                top              : 50%;
-            }
-        }
-
-        .slide-posts {
-            position: relative;
-
-            .slide-slick {
-                overflow: hidden;
-
-                .slick-list {
-                    margin-right: -20px;
-                    margin-left : -20px;
-                }
-
-                .item-slick {
-                    padding: 0 20px;
-                }
-            }
-
-            .wrap-arrow-slick {
-                pointer-events : none;
-                position       : absolute;
-                z-index        : 100;
-                width          : 100%;
-                height         : 100%;
-                top            : 0;
-                left           : 0;
-                display        : flex;
-                flex-wrap      : wrap;
-                justify-content: space-between;
-                align-items    : center;
-
-                .arrow-slick {
-                    pointer-events : auto;
-                    cursor         : pointer;
-                    font-size      : 20px;
-                    line-height    : 1;
-                    color          : #fff;
-                    display        : flex;
-                    justify-content: center;
-                    align-items    : center;
-                    width          : 38px;
-                    height         : 38px;
-                    border-radius  : 50%;
-                    background     : rgba(37, 37, 37, 0.5);
-                    transition     : all 0.2s;
-
-                    &.next-slick {
-                        margin-right: -19px;
-                    }
-
-                    &.prev-slick {
-                        margin-left: -19px;
-                    }
-
-                    &:hover {
-                        background: #fa777c;
-                    }
-
-                    &.slick-arrow.slick-hidden {
-                        display: none;
-                    }
-
-                    &[aria-disabled=true] {
-                        visibility: hidden;
-                    }
-                }
-            }
-        }
-
-        .post-item {
-            .pic {
-                position     : relative;
-                margin-bottom: 24px;
-                overflow     : hidden;
-
-                img {
-                    width     : 100%;
-                    transition: all 0.5s ease-out;
-                }
-
-                .meta-info {
-                    font-weight: 700;
-                    font-size  : 12px;
-                    line-height: 1.5;
-                    color      : #fff;
-                    position   : absolute;
-                    bottom     : 10px;
-                    left       : 10px;
-                    display    : flex;
-                    flex-wrap  : wrap;
-
-                    .item-info {
-                        background-color: #363636;
-                        margin-right    : 3px;
-                        padding         : 2px 9px 1px;
-
-                        i {
-                            margin-right: 3px;
-                        }
-                    }
-                }
-
-                &:hover img {
-                    transform: scale(1.1, 1.1);
-                }
-            }
-
-            .text {
-                text-align: center;
-                padding   : 0 10px;
-
-                .title {
-                    font-family  : Playfair Display;
-                    font-weight  : 700;
-                    font-size    : 18px;
-                    line-height  : 1.444444;
-                    color        : #1f1f1f;
-                    word-break   : break-word;
-                    margin-bottom: 12px;
-
-                    a {
-                        display: inline-block;
-                        color  : #1f1f1f;
-
-                        &:hover {
-                            color: #fa777c;
-                        }
-                    }
-                }
-
-                .date {
-                    font-weight   : 400;
-                    font-size     : 12px;
-                    line-height   : 1.5;
-                    color         : #909090;
-                    text-transform: uppercase;
-                    word-break    : break-word;
-                }
-            }
-        }
-    }
 }
 
 
-
-.thim-popular-video_home-1 {
-    padding-top: 90px;
-}
-
-.bp-element-posts.vblog-layout-slider-3 {
+.bp-element-posts {
     .wrap-element {
         overflow   : hidden;
         padding-top: 10px;

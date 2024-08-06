@@ -288,10 +288,10 @@
     &:hover .btn-play {
         opacity: 0.7;
 
-        .btn-gplay,
-        .btn-aplay,
-        .a-btn-gplay,
-        .a-btn-aplay {
+        .btn-gPlay,
+        .btn-aPlay,
+        .a-btn-gPlay,
+        .a-btn-aPlay {
             opacity: 1;
         }
     }
@@ -302,7 +302,7 @@
             height : 100%;
         }
 
-        .btn-gplay {
+        .btn-gPlay {
             width           : 48%;
             height          : 100%;
             background-color: #1b1e21;
@@ -310,7 +310,7 @@
             transition      : all 0.3s;
         }
 
-        .btn-aplay {
+        .btn-aPlay {
             width           : 48%;
             height          : 100%;
             background-color: #1b1e21;
@@ -318,13 +318,13 @@
             transition      : all 0.3s;
         }
 
-        .btn-gplay .a-btn-gplay {
+        .btn-gPlay .a-btn-gPlay {
             width     : 100%;
             height    : 100%;
             transition: all 0.3s;
         }
 
-        .btn-aplay .a-btn-aplay {
+        .btn-aPlay .a-btn-aPlay {
             width     : 100%;
             height    : 100%;
             transition: all 0.3s;

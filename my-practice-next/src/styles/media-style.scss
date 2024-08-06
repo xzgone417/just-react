@@ -1,7 +1,7 @@
 // @prefix480: col-480-;
 
 @media (max-width: 991px) {
-    .thim-banner_home-1 {
+    .home-first-background {
         padding-top: 60px;
     }
 
@@ -59,7 +59,7 @@
 }
 
 @media (max-width: 767px) {
-    .responsive .bp-element-posts.vblog-layout-slider-3 {
+    .responsive .bp-element-posts {
         .heading-post {
             padding-right : 0;
             padding-bottom: 40px;
@@ -207,7 +207,7 @@
 
 
 @media (max-width: 480px) {
-    .responsive .bp-element-posts.vblog-layout-slider-3 .post-item .item {
+    .responsive .bp-element-posts .post-item .item {
         .pic {
             margin-bottom: 15px;
         }
