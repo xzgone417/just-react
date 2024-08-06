@@ -75,7 +75,7 @@ function GamesPage(props: any) {
                                     <a href={item.gp_link} target="_blank">
                                       <img
                                         className="a-btn-gPlay"
-                                        src="./public/images/store-button-google-play.svg"
+                                        src="http://tmp-test.sofishgame.com/public/images/store-button-google-play.svg"
                                         alt=""
                                       />
                                     </a>
@@ -88,7 +88,7 @@ function GamesPage(props: any) {
                                     >
                                       <img
                                         className="a-btn-aPlay"
-                                        src="./public/images/store-button-app-store.svg"
+                                        src="http://tmp-test.sofishgame.com/public/images/store-button-app-store.svg"
                                         alt=""
                                       />
                                     </a>

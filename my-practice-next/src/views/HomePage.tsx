@@ -155,77 +155,75 @@ function HomePage(props: any) {
                         <i className="ion ion-ios-arrow-right"></i>
                       </div>
                     </div>
-                    <div className="slide-slick">
-                      <Slider
-                        {...slickSettings}
-                        ref={(slider) => {
-                          sliderRef = slider;
-                        }}
-                      >
-                        {data.news_feed.top.map(
-                          (element: any, keying: string | number) => (
-                            <div className="item-slick" key={element.link}>
-                              <div className="post-item">
-                                <div className="row">
-                                  <div className="col-lg-6">
-                                    <div className="feature-item">
-                                      <a href={element.link}>
-                                        <img src={element.img} alt="IMG" />
-                                      </a>
-                                      <div className="overlay"></div>
-                                      <div className="content">
-                                        <h4 className="title">
-                                          <a href={element.link}>
-                                            {element.desc}
-                                          </a>
-                                        </h4>
-                                        <div className="info">
-                                          <span className="item-info">
-                                            {element.date}
-                                          </span>
-                                        </div>
+                    <Slider
+                      {...slickSettings}
+                      ref={(slider) => {
+                        sliderRef = slider;
+                      }}
+                    >
+                      {data.news_feed.top.map(
+                        (element: any, keying: string | number) => (
+                          <div className="item-slick" key={element.link}>
+                            <div className="post-item">
+                              <div className="row">
+                                <div className="col-lg-6">
+                                  <div className="feature-item">
+                                    <a href={element.link}>
+                                      <img src={element.img} alt="IMG" />
+                                    </a>
+                                    <div className="overlay"></div>
+                                    <div className="content">
+                                      <h4 className="title">
+                                        <a href={element.link}>
+                                          {element.desc}
+                                        </a>
+                                      </h4>
+                                      <div className="info">
+                                        <span className="item-info">
+                                          {element.date}
+                                        </span>
                                       </div>
                                     </div>
                                   </div>
-                                  <div className="col-lg-6">
-                                    {data.news_feed.item[keying].map(
-                                      (item: any) => (
-                                        <div className="item" key={item.link}>
-                                          <div className="pic">
-                                            <a href={item.link}>
-                                              <img src={item.img} alt="IMG" />
-                                            </a>
+                                </div>
+                                <div className="col-lg-6">
+                                  {data.news_feed.item[keying].map(
+                                    (item: any) => (
+                                      <div className="item" key={item.link}>
+                                        <div className="pic">
+                                          <a href={item.link}>
+                                            <img src={item.img} alt="IMG" />
+                                          </a>
+                                        </div>
+                                        <div className="text">
+                                          <div className="info">
+                                            {item.date}
                                           </div>
-                                          <div className="text">
-                                            <div className="info">
-                                              {item.date}
-                                            </div>
-                                            <h4 className="title">
-                                              <a
-                                                href={item.link}
-                                                title={item.tip_title}
-                                              >
-                                                {item.title}
-                                              </a>
-                                            </h4>
-                                            <div
-                                              className="description"
-                                              title={item.tip_desc}
+                                          <h4 className="title">
+                                            <a
+                                              href={item.link}
+                                              title={item.tip_title}
                                             >
-                                              {item.desc}
-                                            </div>
+                                              {item.title}
+                                            </a>
+                                          </h4>
+                                          <div
+                                            className="description"
+                                            title={item.tip_desc}
+                                          >
+                                            {item.desc}
                                           </div>
                                         </div>
-                                      )
-                                    )}
-                                  </div>
+                                      </div>
+                                    )
+                                  )}
                                 </div>
                               </div>
                             </div>
-                          )
-                        )}
-                      </Slider>
-                    </div>
+                          </div>
+                        )
+                      )}
+                    </Slider>
                   </div>
                 </div>
               </div>

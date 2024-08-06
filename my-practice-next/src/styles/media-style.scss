@@ -1,6 +1,6 @@
 // @prefix480: col-480-;
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
     .home-first-background {
         padding-top: 60px;
     }
@@ -227,7 +227,7 @@
 @media (min-width: 768px) {
     .site-footer {
 
-        .copyright-area .thim-2-col>* {
+        .copyright-area {
             &:nth-child(1) {
 
                 &.copyright-text,
@@ -249,27 +249,7 @@
     }
 }
 
-@media (min-width: 992px) {
-    .site-footer .copyright-area .thim-3-col>* {
-        &:nth-child(1) {
-
-            &.copyright-text,
-            &.copyright-menu,
-            &.widget {
-                text-align: left;
-            }
-        }
-
-        &:nth-child(3) {
-
-            &.copyright-text,
-            &.copyright-menu,
-            &.widget {
-                text-align: right;
-            }
-        }
-    }
-}
+@media (min-width: 992px) {}
 
 
 

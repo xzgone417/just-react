@@ -30,6 +30,11 @@
                         white-space: nowrap;
                         transition : all 0.2s;
                         font-size  : 16px;
+
+                        @media screen and (min-width: 768px) and (max-width:1200px) {
+                            padding  : 15px 7px;
+                            font-size: 14px;
+                        }
                     }
 
                 }
@@ -134,14 +139,28 @@
             justify-content: flex-start;
 
             .left-header-container {
-                // flex-grow: 1;
                 width: 19vw;
 
+                .header-logo {
+                    min-width      : 120px;
+                    text-align     : center;
+                    height         : 100%;
+                    display        : flex;
+                    justify-content: center;
+                    align-items    : center;
+                    margin-left    : 2vw;
+
+                    img {
+                        max-width : 100%;
+                        max-height: 80%;
+                    }
+                }
             }
 
             .header-menu-container {
                 padding-right: 15px;
                 padding-left : 15px;
+                flex-grow    : 1;
 
                 .container-header-logo {
                     width          : 120px;
@@ -163,7 +182,11 @@
             .right-header-container {
                 display        : flex;
                 justify-content: right;
-                flex-grow      : 1;
+                width          : 30vw;
+
+                @media screen and (min-width: 768px) and (max-width:1200px) {
+                    width: 30vw;
+                }
 
                 .header-menu-right {
                     display     : flex;
@@ -232,51 +255,9 @@
                     display     : flex;
                     align-items : center;
                     margin-right: 10%;
-
-                    // .change-language-btn {
-                    //     .change-language-span {
-                    //         padding-left: 0.5em;
-                    //     }
-                    // }
-
-                    // .dropdown-menu {
-                    //     left            : -25%;
-                    //     background-color: rgba(255, 255, 255, 0.9);
-                    //     width           : 100%;
-
-                    //     .dropdown-item-li {
-                    //         padding   : 10px 0;
-                    //         color     : #e40914;
-                    //         text-align: center;
-
-                    //         &:hover {
-                    //             background-color: #f7d2d4;
-                    //         }
-                    //     }
-                    // }
-
-                    // &:hover {
-                    //     background-color: #eb474f;
-                    // }
                 }
             }
 
-
-
-            .header-logo {
-                min-width      : 120px;
-                text-align     : center;
-                height         : 100%;
-                display        : flex;
-                justify-content: center;
-                align-items    : center;
-                margin-left    : 2vw;
-
-                img {
-                    max-width : 100%;
-                    max-height: 80%;
-                }
-            }
 
 
         }
@@ -546,9 +527,6 @@
     background: #111;
 }
 
-.yikes-mailchimp-container .edit-link {
-    display: none;
-}
 
 .site-footer {
     .copyright-area {
@@ -749,37 +727,7 @@ form#register-form {
     }
 }
 
-// min
-@media (min-width: 576px) {
-    .header-menu-container {
-        width: 66vw;
-    }
-}
 
-@media (min-width: 768px) {
-    .header-menu-container {
-        width: 40vw;
-    }
-}
-
-@media (min-width: 992px) {
-    .header-menu-container {
-        width: 48vw;
-    }
-}
-
-@media (min-width: 1200px) {
-    .header-menu-container {
-        width: 55vw;
-    }
-
-}
-
-@media (max-width: 576px) {
-    .header-menu-container {
-        width: 66vw;
-    }
-}
 
 // max
 @media screen and (max-width: 768px) {

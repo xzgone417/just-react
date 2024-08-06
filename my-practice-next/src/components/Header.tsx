@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import "@/styles/section.scss";
 import { Select, ConfigProvider, Space, Drawer } from "antd";
 import { DrawerStyles } from "antd/es/drawer/DrawerPanel";
 
@@ -60,6 +59,9 @@ function Header(props: any) {
                       <Link href="/games"> Games </Link>
                     </li>
                     <li className="menu-item-has-children">
+                      <Link href="/about"> About </Link>
+                    </li>
+                    <li className="menu-item-has-children">
                       <Link href="/blogs"> Blogs </Link>
                     </li>
                     <li className="menu-item-has-children">
@@ -67,6 +69,9 @@ function Header(props: any) {
                     </li>
                     <li className="menu-item-has-children">
                       <Link href="/user-center"> UserCenter </Link>
+                    </li>
+                    <li className="menu-item-has-children">
+                      <Link href="/contact"> Contact </Link>
                     </li>
                   </ul>
                 </nav>

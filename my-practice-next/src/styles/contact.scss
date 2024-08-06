@@ -1,0 +1,200 @@
+.site-content {
+    .icon-box {
+        text-align: center;
+
+        .icon-image {
+            font-size    : 60px;
+            line-height  : 1;
+            color        : #e40914;
+            margin-bottom: 20px;
+        }
+
+        .i-content {
+
+            .i-title {
+                font-weight  : 500;
+                font-size    : 20px;
+                line-height  : 1.5;
+                color        : #292929;
+                word-break   : break-word;
+                margin-bottom: 0.6em;
+            }
+
+            .i-description {
+                font-weight: 300;
+                font-size  : 16px;
+                line-height: 1.625;
+                color      : #6e6e6e;
+                word-break : break-word;
+            }
+
+            i {
+                font-size      : 24px;
+                color          : #6e6e6e;
+                display        : inline-flex;
+                justify-content: center;
+                align-items    : center;
+                width          : 40px;
+                height         : 40px;
+                border-radius  : 50%;
+                border         : 1px solid rgba(204, 204, 204, .4);
+                transition     : all .2s;
+                margin         : 8px;
+            }
+        }
+
+    }
+
+    .div-line-contact-page {
+        margin    : 5vh 0;
+        height    : 1px;
+        background: #e1e1e1;
+    }
+
+    .field-heading {
+        word-break  : break-word;
+        text-align  : center;
+        margin-left : auto;
+        margin-right: auto;
+
+        .f-title {
+            font-weight   : 600;
+            font-size     : 24px;
+            line-height   : 1.3;
+            color         : #292929;
+            text-transform: uppercase;
+            margin-bottom : 7px;
+        }
+
+        .f-description {
+            font-weight: 300;
+            font-size  : 16px;
+            line-height: 1.625;
+            color      : #6e6e6e;
+        }
+
+    }
+
+
+}
+
+
+.contact-form {
+    display        : flex;
+    justify-content: space-between;
+    flex-wrap      : wrap;
+    margin         : 5vh auto;
+
+    .wrap-input {
+        width        : calc((100% - 40px) / 3);
+        margin-bottom: 20px;
+
+        &.full-width {
+            width: 100%;
+        }
+
+        input {
+            font-weight: 300;
+            font-size  : 14px;
+            line-height: 48px;
+            color      : #6e6e6e;
+            width      : 100%;
+            background : 0 0;
+            border     : 1px solid #e1e1e1;
+            padding    : 0 19px;
+
+            &:focus {
+                border-color: #e40914;
+            }
+
+            &::-webkit-input-placeholder {
+                color     : #aeaeae;
+                font-style: italic;
+            }
+
+            &:-moz-placeholder {
+                color     : #aeaeae;
+                font-style: italic;
+            }
+
+            &::-moz-placeholder {
+                color     : #aeaeae;
+                font-style: italic;
+            }
+
+            &:-ms-input-placeholder {
+                color     : #aeaeae;
+                font-style: italic;
+            }
+        }
+    }
+
+    .wap-textarea {
+        width        : 100%;
+        margin-bottom: 40px;
+
+        textarea {
+            font-weight: 300;
+            font-size  : 14px;
+            line-height: 1.625;
+            color      : #6e6e6e;
+            width      : 100%;
+            min-height : 220px;
+            background : 0 0;
+            border     : 1px solid #e1e1e1;
+            display    : block;
+            margin     : 0;
+            padding    : 14px 19px;
+
+            &:focus {
+                border-color: #e40914;
+            }
+
+            &::-webkit-input-placeholder {
+                color     : #aeaeae;
+                font-style: italic;
+            }
+
+            &:-moz-placeholder {
+                color     : #aeaeae;
+                font-style: italic;
+            }
+
+            &::-moz-placeholder {
+                color     : #aeaeae;
+                font-style: italic;
+            }
+
+            &:-ms-input-placeholder {
+                color     : #aeaeae;
+                font-style: italic;
+            }
+        }
+    }
+
+    .form-submit {
+        font-weight    : 500;
+        font-size      : 14px;
+        line-height    : 1.5;
+        color          : #fff;
+        text-transform : uppercase;
+        white-space    : nowrap;
+        display        : inline-flex;
+        justify-content: center;
+        align-items    : center;
+        overflow       : hidden;
+        max-width      : 100%;
+        height         : 46px;
+        border-radius  : 23px;
+        padding        : 0 39px;
+        background     : #e40914;
+        margin-right   : auto;
+        margin-left    : auto;
+        cursor         : pointer;
+        transition     : all .2s;
+
+        &:hover {
+            background: #b30710;
+        }
+    }
+}

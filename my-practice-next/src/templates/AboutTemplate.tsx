@@ -2,17 +2,16 @@
 
 import Link from "next/link";
 import { useState, useEffect, Suspense, useMemo } from "react";
-import BlogsPage from "@/views/BlogsPage";
+import AboutPage from "@/views/AboutPage";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LoginDialog from "@/components/LoginDialog";
 import ScrollToTop from "@/components/ScrollToTop";
-import "@/styles/blogs.scss";
+import "@/styles/about.scss";
 
-function BlogsTemplate({ data }: any) {
+function AboutTemplate({ data }: any) {
   const [dialogVisible, setDialogVisible] = useState(0);
   const [dialogState, setDialogState] = useState(0);
-  const [videoModalOpen, setVideoModalOpen] = useState(false);
   function to_setDialogState(_type: number) {
     if (_type === 1) {
       setDialogVisible(1);
@@ -33,7 +32,7 @@ function BlogsTemplate({ data }: any) {
     <>
       <div className="responsive home-1" id="wrapper-container">
         <Header to_setDialogState={to_setDialogState}></Header>
-        <BlogsPage data={data}></BlogsPage>
+        <AboutPage data={data}></AboutPage>
         <Footer></Footer>
       </div>
       <LoginDialog
@@ -46,4 +45,4 @@ function BlogsTemplate({ data }: any) {
   );
 }
 
-export default BlogsTemplate;
+export default AboutTemplate;
