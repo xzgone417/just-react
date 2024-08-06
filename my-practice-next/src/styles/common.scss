@@ -198,7 +198,7 @@ form#lost-password-form .description {
                 background: #d7d7d7;
             }
 
-            .arow-slick {
+            .arrow-slick {
                 color: #cfcfcf;
 
                 &:hover {
@@ -222,15 +222,6 @@ form#lost-password-form .description {
         }
     }
 
-    .bp-element-call-to-action.vblog-layout-1 .wrap-element {
-        .overlay {
-            opacity: 0.3;
-        }
-
-        .content .text {
-            font-weight: 500;
-        }
-    }
 
     .site-footer {
         background: #252525;
@@ -241,61 +232,6 @@ form#lost-password-form .description {
     }
 }
 
-// .bp-element-heading {
-//     &.align-left {
-//         text-align: left;
-
-//         .title,
-//         .description,
-//         .content {
-//             word-break  : break-word;
-//             text-align  : left;
-//             margin-left : 0;
-//             margin-right: auto;
-//         }
-
-//         .line {
-//             margin-left : 0;
-//             margin-right: auto;
-//         }
-//     }
-
-//     &.align-right {
-//         text-align: right;
-
-//         .title,
-//         .description,
-//         .content {
-//             word-break  : break-word;
-//             text-align  : right;
-//             margin-left : auto;
-//             margin-right: 0;
-//         }
-
-//         .line {
-//             margin-left : auto;
-//             margin-right: 0;
-//         }
-//     }
-
-//     &.align-center {
-//         text-align: center;
-
-//         .title,
-//         .description,
-//         .content {
-//             word-break  : break-word;
-//             text-align  : center;
-//             margin-left : auto;
-//             margin-right: auto;
-//         }
-
-//         .line {
-//             margin-left : auto;
-//             margin-right: auto;
-//         }
-//     }
-// }
 
 .site-content {
     padding-top     : 6vh;
@@ -642,7 +578,7 @@ form#lost-password-form .description {
                     }
                 }
 
-                .breadcrum-icon {
+                .breadcrumb-icon {
                     color       : #fff;
                     margin-right: 5px;
                     margin-left : 5px;
@@ -689,54 +625,6 @@ form#lost-password-form .description {
     }
 }
 
-// .thim-1-col>* {
-//     width: calc((100% - (1 * 30px)) / 1);
-// }
-
-// .thim-2-col>* {
-//     width: calc((100% - (2 * 30px)) / 2);
-// }
-
-// .thim-3-col>* {
-//     width: calc((100% - (3 * 30px)) / 3);
-// }
-
-// .thim-4-col>* {
-//     width: calc((100% - (4 * 30px)) / 4);
-// }
-
-// .thim-5-col>* {
-//     width: calc((100% - (5 * 30px)) / 5);
-// }
-
-// .thim-6-col>* {
-//     width: calc((100% - (6 * 30px)) / 6);
-// }
-
-// .thim-7-col>* {
-//     width: calc((100% - (7 * 30px)) / 7);
-// }
-
-// .thim-8-col>* {
-//     width: calc((100% - (8 * 30px)) / 8);
-// }
-
-// .thim-9-col>* {
-//     width: calc((100% - (9 * 30px)) / 9);
-// }
-
-// .thim-10-col>* {
-//     width: calc((100% - (10 * 30px)) / 10);
-// }
-
-// .thim-11-col>* {
-//     width: calc((100% - (11 * 30px)) / 11);
-// }
-
-// .thim-12-col>* {
-//     width: calc((100% - (12 * 30px)) / 12);
-// }
-
 .single-format-video .site-content {
     padding-top: 0;
 }
@@ -755,4 +643,8 @@ form#lost-password-form .description {
 
 input[type="password"]::-ms-reveal {
     display: none;
+}
+
+strong {
+    cursor: pointer;
 }

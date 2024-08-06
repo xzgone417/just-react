@@ -3,9 +3,6 @@
     margin-bottom: 84px;
 
     &.no-have-date {
-        &.have-no-thumbnail .head-blog {
-            margin-left: 0;
-        }
 
         .media-blog-detail {
             min-height   : auto;
@@ -100,7 +97,7 @@
             height         : 84px;
             background     : rgba(0, 0, 0, 0.6);
             position       : absolute;
-            z-index        : 10;
+            z-index        : 5;
             bottom         : 0;
             left           : 0;
 
@@ -673,22 +670,6 @@
                     }
                 }
             }
-        }
-    }
-
-    &.have-no-thumbnail {
-        position: relative;
-
-        .head-blog {
-            margin-left: 105px;
-        }
-
-        .media-blog-detail {
-            display : block;
-            width   : 105px;
-            position: absolute;
-            top     : 0;
-            left    : 0;
         }
     }
 }

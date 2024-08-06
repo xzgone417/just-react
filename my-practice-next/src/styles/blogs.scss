@@ -56,7 +56,7 @@
     }
 }
 
-.blog-list.vblog-layout-1 .item-blog {
+.blog-list .item-blog {
     padding-bottom: 40px;
     border-bottom : 1px solid #e5e5e5;
     margin-bottom : 40px;
@@ -93,7 +93,7 @@
             height         : 84px;
             background     : rgba(0, 0, 0, 0.6);
             position       : absolute;
-            z-index        : 10;
+            z-index        : 5;
             bottom         : 0;
             left           : 0;
 
@@ -179,7 +179,7 @@
             margin-bottom: 30px;
         }
 
-        .btn-learnmore {
+        .btn-learn-more {
             font-weight   : 400;
             font-size     : 14px;
             line-height   : 40px;
@@ -203,187 +203,6 @@
 
         &:hover img {
             transform: scale(1.1, 1.1);
-        }
-    }
-
-    &.video-item .media-item .pic {
-        position: relative;
-        z-index : 1;
-        overflow: hidden;
-
-        &::before {
-            content   : "";
-            display   : block;
-            position  : absolute;
-            z-index   : 2;
-            width     : calc(100% + 2px);
-            height    : calc(100% + 2px);
-            bottom    : -1px;
-            left      : -1px;
-            background: #000;
-            opacity   : 0.3;
-            transition: all 0.3s;
-        }
-
-        .btn-play {
-            position           : absolute;
-            z-index            : 20;
-            top                : calc(50% - 22px);
-            left               : calc(50% - 19px);
-            display            : block;
-            width              : 38px;
-            height             : 44px;
-            background-image   : url(http://tmp-test.sofishgame.com/public/images/icon-play-01.png);
-            background-size    : contain;
-            background-repeat  : no-repeat;
-            background-position: center center;
-            transition         : all 0.3s;
-
-            &:hover {
-                transform: scale(1.2, 1.2);
-            }
-        }
-
-        &:hover:before {
-            opacity: 0.4;
-        }
-    }
-
-    &.slide-item .media-item .pic {
-        display: block;
-        width  : 100%;
-
-        .slide-images {
-            width   : 100%;
-            position: relative;
-
-            .item-slick {
-                display        : flex;
-                justify-content: center;
-                flex-wrap      : wrap;
-            }
-
-            .wrap-arrow-slick {
-                pointer-events : none;
-                position       : absolute;
-                z-index        : 100;
-                width          : 100%;
-                height         : 100%;
-                top            : 0;
-                left           : 0;
-                display        : flex;
-                flex-wrap      : wrap;
-                justify-content: space-between;
-                align-items    : center;
-                padding        : 0 20px;
-
-                .arow-slick {
-                    pointer-events : auto;
-                    cursor         : pointer;
-                    font-size      : 20px;
-                    line-height    : 1;
-                    color          : #fff;
-                    display        : flex;
-                    justify-content: center;
-                    align-items    : center;
-                    width          : 38px;
-                    height         : 38px;
-                    border-radius  : 50%;
-                    background     : rgba(37, 37, 37, 0.6);
-                    transition     : all 0.2s;
-
-                    &:hover {
-                        background: #e40914;
-                    }
-
-                    &.slick-arrow.slick-hidden {
-                        display: none;
-                    }
-
-                    &[aria-disabled=true] {
-                        visibility: hidden;
-                    }
-                }
-            }
-
-            .wrap-dot-slick {
-                pointer-events : none;
-                position       : absolute;
-                z-index        : 100;
-                width          : 100%;
-                bottom         : 27px;
-                left           : 0;
-                display        : flex;
-                justify-content: center;
-                padding        : 0 90px;
-
-                .dots-slick {
-                    pointer-events : auto;
-                    display        : flex;
-                    flex-wrap      : wrap;
-                    justify-content: center;
-
-                    li {
-                        width        : 9px;
-                        height       : 9px;
-                        border-radius: 50%;
-                        background   : rgba(215, 215, 215, 0.6);
-                        margin       : 3px;
-                        cursor       : pointer;
-                        transition   : all 0.2s;
-
-                        &:hover,
-                        &.slick-active {
-                            background: #e40914;
-                        }
-                    }
-                }
-            }
-        }
-
-        .item-img {
-            position: relative;
-            z-index : 1;
-            overflow: hidden;
-
-            &::before {
-                content   : "";
-                display   : block;
-                position  : absolute;
-                z-index   : 2;
-                width     : calc(100% + 2px);
-                height    : calc(100% + 2px);
-                bottom    : -1px;
-                left      : -1px;
-                background: #000;
-                opacity   : 0.3;
-            }
-        }
-    }
-
-    &.have-no-thumbnail {
-        display        : flex;
-        flex-wrap      : wrap;
-        justify-content: space-between;
-        align-items    : flex-start;
-
-        .media-item {
-            width: 84px;
-        }
-
-        .text-item {
-            width     : calc(100% - 84px - 30px);
-            margin-top: -6px;
-        }
-
-        &.no-have-date {
-            .text-item {
-                width: 100%;
-            }
-
-            .media-item {
-                display: none;
-            }
         }
     }
 

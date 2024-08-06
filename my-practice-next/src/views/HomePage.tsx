@@ -29,7 +29,7 @@ function HomePage(props: any) {
         <div className="thim-banner_home-1">
           <div className="overlay-area"></div>
           <div className="container">
-            <div className="bp-element bp-element-st-list-videos vblog-layout-1">
+            <div className="home-st-list-videos big-home-img">
               <div className="wrap-element">
                 <div className="feature-item">
                   <div className="row">
@@ -77,7 +77,7 @@ function HomePage(props: any) {
               </div>
             </div>
 
-            <div className="bp-element bp-element-st-list-videos vblog-layout-1-1">
+            <div className="home-st-list-videos list-home-imgs">
               <div className="wrap-element">
                 <div className="normal-items">
                   <div className="row">
@@ -131,7 +131,7 @@ function HomePage(props: any) {
 
         <div className="thim-news-feed_home-1" id="news-feed">
           <div className="container">
-            <div className="bp-element bp-element-posts vblog-layout-slider-3">
+            <div className="bp-element-posts vblog-layout-slider-3">
               <div className="wrap-element">
                 <div className="heading-post">
                   <h3 className="title">News Feed</h3>
@@ -143,13 +143,13 @@ function HomePage(props: any) {
                   <div className="slide-posts js-call-slick-col">
                     <div className="wrap-arrow-slick">
                       <div
-                        className="arow-slick prev-slick"
+                        className="arrow-slick prev-slick"
                         onClick={previousSlick}
                       >
                         <i className="ion ion-ios-arrow-left"></i>
                       </div>
                       <div
-                        className="arow-slick next-slick"
+                        className="arrow-slick next-slick"
                         onClick={nextSlick}
                       >
                         <i className="ion ion-ios-arrow-right"></i>

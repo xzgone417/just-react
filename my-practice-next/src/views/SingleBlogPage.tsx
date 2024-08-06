@@ -34,7 +34,7 @@ function SingleBlogPage(props: any) {
                     <a href="./index.html">{data.title.left}</a>
                   </li>
                   <li>
-                    <span className="breadcrum-icon">/</span>
+                    <span className="breadcrumb-icon">/</span>
                     {data.title.right}
                   </li>
                 </ul>
@@ -66,7 +66,7 @@ function SingleBlogPage(props: any) {
                       </div>
                     </div>
                     <div className="text-blog-detail">
-                      <div className="wrap-share-blog sticky-sidebar">
+                      <div className="wrap-share-blog ">
                         <div className="share">
                           <span className="namefield"> Share </span>
                           <span className="socials">
@@ -109,9 +109,9 @@ function SingleBlogPage(props: any) {
                   </div>
                 </div>
               </main>
-              <div className="widget-area col-sm-9 col-md-8 col-lg-3 sticky-sidebar">
-                <aside className="widget widget_thim_layout_builder">
-                  <div className="bp-element bp-element-posts layout-list-2">
+              <div className="widget-area col-sm-9 col-md-8 col-lg-3">
+                <aside className="widget">
+                  <div className="bp-element-posts layout-list-2">
                     <div className="wrap-element">
                       <div className="list-posts">
                         {data.aside_list.map((item: any) => (

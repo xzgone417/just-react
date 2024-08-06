@@ -33,7 +33,7 @@ function BlogsPage(props: any) {
                     <a href="./index.html">{data.title.left}</a>
                   </li>
                   <li>
-                    <span className="breadcrum-icon">/</span>
+                    <span className="breadcrumb-icon">/</span>
                     {data.title.right}
                   </li>
                 </ul>
@@ -46,7 +46,7 @@ function BlogsPage(props: any) {
             <div className="row">
               <main className="site-main col-lg-9">
                 <div className="wrap-main-content">
-                  <div className="blog-list thim-1-col vblog-layout-1">
+                  <div className="blog-list">
                     {data.blog_list.map((item: any) => (
                       <article className="item-blog image-item" key={item.link}>
                         <div className="media-item">
@@ -67,7 +67,7 @@ function BlogsPage(props: any) {
                           <div className="content">{item.desc}</div>
                           <a
                             href={item.link}
-                            className="btn-learnmore btn-small shape-round"
+                            className="btn-learn-more btn-small shape-round"
                           >
                             learn more
                           </a>
@@ -103,9 +103,9 @@ function BlogsPage(props: any) {
                   </ul>
                 </div>
               </main>
-              <div className="widget-area col-sm-9 col-md-8 col-lg-3 sticky-sidebar">
-                <aside className="widget widget_thim_layout_builder">
-                  <div className="bp-element bp-element-posts layout-list-2">
+              <div className="widget-area col-sm-9 col-md-8 col-lg-3 ">
+                <aside className="widget">
+                  <div className="bp-element-posts layout-list-2">
                     <div className="wrap-element">
                       <div className="list-posts">
                         {data.aside_list.map((item: any) => (

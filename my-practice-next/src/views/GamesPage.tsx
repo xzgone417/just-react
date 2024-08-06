@@ -111,7 +111,7 @@ function GamesPage(props: any) {
                 </div>
               </main>
 
-              <div className="widget-area col-sm-9 col-md-8 col-lg-4 sticky-sidebar">
+              <div className="widget-area col-sm-9 col-md-8 col-lg-4 ">
                 <aside className="widget widget_product_categories">
                   <div className="product-categories-title">
                     <h3 className="widget-title">Servers</h3>
@@ -139,8 +139,8 @@ function GamesPage(props: any) {
                   </ul>
                 </aside>
 
-                <aside className="widget widget_thim_layout_builder">
-                  <div className="bp-element bp-element-products vblog-layout-list-1">
+                <aside className="widget">
+                  <div className="bp-element-products">
                     <div className="heading-products">
                       <h3 className="title">Most Popular</h3>
                     </div>
