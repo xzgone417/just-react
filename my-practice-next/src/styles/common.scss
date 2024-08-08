@@ -614,3 +614,43 @@ input[type="password"]::-ms-reveal {
 strong {
     cursor: pointer;
 }
+
+// $prefix480: "col-480-";
+
+// // 生成列的混合宏
+// @mixin generate-columns($n) {
+//     @if $n>0 {
+//         .#{$prefix480}#{$n} {
+//             position     : relative;
+//             min-height   : 1px;
+//             padding-right: 15px;
+//             padding-left : 15px;
+//         }
+
+//         @include generate-columns($n - 1);
+//     }
+// }
+
+// // 生成初始列
+// @include generate-columns(12);
+
+// @media (min-width: 480px) {
+//     .container {
+//         width: 90vw;
+//     }
+
+//     // 生成列的混合宏在媒体查询内
+//     @mixin generate-columns480($n) {
+//         @if $n>0 {
+//             .#{$prefix480}#{$n} {
+//                 float: left;
+//                 width: calc(100% / 12 * #{$n});
+//             }
+
+//             @include generate-columns480($n - 1);
+//         }
+//     }
+
+//     // 生成媒体查询内的列
+//     @include generate-columns480(12);
+// }
