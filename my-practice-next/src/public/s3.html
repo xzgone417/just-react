@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR Card</title>
+    <style>
+        body {
+            background-color: #1c1c1c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            display: flex;
+            background-color: #232323;
+            width: 600px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .card .left {
+            background-color: #d40000;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            font-weight: bold;
+            clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+        }
+
+        .card .right {
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+            padding: 20px;
+            color: white;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .card .right h1 {
+            margin: 0;
+            font-size: 28px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card .right p {
+            margin: 10px 0;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #cccccc;
+        }
+
+        .card .right .button-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .card .right .button-container .button {
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="left">
+            VR
+        </div>
+        <div class="right">
+            <h1>Beat Slash</h1>
+            <p>Slash the beat as a cyber runner!<br>Stay ahead of the curve - don't let anything stand in your way!</p>
+            <div class="button-container">
+                <a href="#" class="button">Learn More</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

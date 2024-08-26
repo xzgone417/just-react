@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Black Triangle with White Border</title>
+    <style>
+      body {
+        background-color: bisque;
+        padding: 80px;
+      }
+      .rr {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        background-color: aqua;
+      }
+      .triangle {
+        position: absolute;
+        left: -50px;
+        bottom: 0;
+        width: 50px;
+        height: 100px;
+        background-color: black;
+      }
+      .triangle::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: 0px;
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-bottom: 50px solid black;
+      }
+
+      /* .triangle::before {
+        content: "";
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        width: 0;
+        height: 0;
+        border-left: 53px solid transparent;
+        border-right: 53px solid transparent;
+        border-bottom: 106px solid white;
+        z-index: -1;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="rr"><div class="triangle"></div></div>
+  </body>
+</html>
