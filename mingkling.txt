@@ -3,6 +3,15 @@ npm install i18next react-i18next i18next-browser-languagedetector
 
 npm install next-i18next react-i18next i18next
 
-
+//native
 npx react-native@latest init AwesomeProject
+npm install
 npx react-native run-android
+npm install -g react-devtools
+react-devtools
+npx react-native log-android
+
+//electron
+mkdir my-electron-app && cd my-electron-app
+npm init
+npm install --save-dev electron
